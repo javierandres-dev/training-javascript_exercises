@@ -1,13 +1,13 @@
 "use strict";
 const d = document,
   weekDays = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
 let flag = 0,
   caller = undefined;
@@ -29,7 +29,7 @@ export function exercise001() {
     hours = getHours - 12;
     period = "PM";
   }
-  $spans[0].textContent = `${weekDays[day - 1]}`;
+  $spans[0].textContent = `${weekDays[day]}`;
   $spans[1].textContent = `${hours < 10 ? "0" + hours : hours} ${period} : ${
     minutes < 10 ? "0" + minutes : minutes
   } : ${seconds < 10 ? "0" + seconds : seconds}`;
@@ -254,7 +254,7 @@ export function exercise012() {
   const $div = d.getElementById("12"),
     $solution = $div.querySelector(".solution"),
     $p = d.createElement("p");
-  $p.textContent = `The website URL is: ${d.URL}`;
+  $p.textContent = `Website URL is: ${d.URL}`;
   $solution.appendChild($p);
 }
 export function exercise013() {
@@ -264,6 +264,115 @@ export function exercise013() {
     $p = d.createElement("p");
   $p.textContent = "";
   $solution.appendChild($p);
+  */
+}
+export function exercise014() {
+  const $div = d.getElementById("14"),
+    $solution = $div.querySelector(".solution"),
+    $form = $solution.querySelector("form"),
+    $btn = $form.querySelector("button");
+  $btn.addEventListener("click", () => {
+    if ($form.filename.value.length === 0) {
+      showResult("14", "warning", "Filename is required");
+      return;
+    }
+    const filename = $form.filename.value,
+      count = [...filename].filter((dot) => dot === ".").length;
+    if (count !== 1) {
+      showResult("14", "warning", "Wrong filename");
+      return;
+    }
+    try {
+      const FILENAME = filename.split("."),
+        extension = FILENAME[1];
+      showResult(
+        "14",
+        "success",
+        `The extension of a filename is: ${extension}`
+      );
+    } catch (error) {
+      showResult("14", "danger", `Error: ${error}`);
+    }
+  });
+}
+export function exercise015() {
+  const $div = d.getElementById("15"),
+    $solution = $div.querySelector(".solution"),
+    $form = $solution.querySelector("form"),
+    $btn = $form.querySelector("button");
+  $btn.addEventListener("click", () => {
+    if ($form.number.value.length === 0) {
+      showResult("15", "warning", "Number is required");
+      return;
+    }
+    try {
+      const number = parseInt($form.number.value);
+      if (number <= 13) {
+        showResult(
+          "15",
+          "success",
+          `The difference between ${number} and 13 is: ${13 - number}`
+        );
+      } else {
+        showResult(
+          "15",
+          "success",
+          `The double the absolute difference between ${number} and 13 is: ${
+            (number - 13) * 2
+          }`
+        );
+      }
+    } catch (error) {
+      showResult("15", "danger", `Error: ${error}`);
+    }
+  });
+}
+export function exercise016() {
+  const $div = d.getElementById("16"),
+    $solution = $div.querySelector(".solution"),
+    $form = $solution.querySelector("form"),
+    $btn = $form.querySelector("button");
+  $btn.addEventListener("click", () => {
+    if ($form.n1.value.length === 0 || $form.n2.value.length === 0) {
+      showResult("16", "warning", "All fields are required");
+      return;
+    }
+    try {
+      const a = parseInt($form.n1.value),
+        b = parseInt($form.n2.value);
+      if (a === b) {
+        showResult(
+          "16",
+          "success",
+          `${a} = ${b} => The triple their sum = ${(a + b) * 3}`
+        );
+      } else {
+        showResult("16", "success", `${a} + ${b} = ${a + b}`);
+      }
+    } catch (error) {
+      showResult("16", "danger", `Error: ${error}`);
+    }
+  });
+}
+export function exercise017() {
+  /*
+  const $div = d.getElementById("17"),
+    $solution = $div.querySelector(".solution"),
+    $form = $solution.querySelector("form"),
+    $btn = $form.querySelector("button");
+  $btn.addEventListener("click", () => {
+    if ($form.n1.value.length === 0 || $form.n2.value.length === 0) {
+      showResult("17", "warning", "All fields are required");
+      return;
+    }
+    try {
+      const a = parseInt($form.n1.value),
+        b = parseInt($form.n2.value);
+      showResult("17", "success", `${a} + ${b} = ${a + b}`);
+    } catch (error) {
+      showResult("17", "danger", `Error: ${error}`);
+    }
+  });
   */
 }
 const showResult = (id, type, message) => {

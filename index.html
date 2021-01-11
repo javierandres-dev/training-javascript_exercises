@@ -30,20 +30,10 @@
           href="https://www.javierandresgp.com"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Javier Andrés GP</a
-        >.
+          >Javier Andrés GP
+        </a>
         <br />
-        <span>
-          Found a bug or have an idea?
-          <a
-            href="https://www.javierandresgp.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Contact me</a
-          > </span
-        >.
+        <span> Found a bug or have an idea? Contact me</span>
       </p>
     </header>
     <nav></nav>
@@ -94,11 +84,11 @@
                 Enter the three side lengths and press 'Calculate' button
               </legend>
               <label>Number of the first side</label>
-              <input type="number" placeholder="5" />
+              <input type="number" placeholder="5" required />
               <label>Number of the second side</label>
-              <input type="number" placeholder="6" />
+              <input type="number" placeholder="6" required />
               <label>Number of the third side</label>
-              <input type="number" placeholder="7" />
+              <input type="number" placeholder="7" required />
             </fieldset>
             <button type="button">Calculate</button>
           </form>
@@ -126,7 +116,7 @@
             <fieldset>
               <legend>Enter a year and press 'Check' button</legend>
               <label>Enter a year</label>
-              <input type="number" name="year" placeholder="1976" />
+              <input type="number" name="year" placeholder="1976" required />
             </fieldset>
             <button type="button">Check</button>
           </form>
@@ -157,7 +147,7 @@
               <label
                 >Enter a number between 1 to 10 and press 'Check' button</label
               >
-              <input type="number" name="number" placeholder="8" />
+              <input type="number" name="number" placeholder="8" required />
             </fieldset>
             <button type="button">Check</button>
           </form>
@@ -184,9 +174,9 @@
             <fieldset>
               <legend>Enter two numbers and select an operation</legend>
               <label for="a">Enter first number</label>
-              <input type="number" name="a" placeholder="16" />
+              <input type="number" name="a" placeholder="16" required />
               <label for="b">Enter second number</label>
-              <input type="number" name="b" placeholder="8" />
+              <input type="number" name="b" placeholder="8" required />
             </fieldset>
             <div class="btn-group">
               <button type="button" name="btnMul">Multiply</button>
@@ -206,7 +196,7 @@
             <fieldset>
               <legend>Enter degrees and select a type convertion</legend>
               <label for="degrees">Enter degrees</label>
-              <input type="number" name="degrees" placeholder="8" />
+              <input type="number" name="degrees" placeholder="8" required />
               <input type="radio" name="to" id="CtoF" />
               <label for="CtoF">Celsius to Fahrenheit</label>
               <input type="radio" name="to" id="FtoC" />
@@ -241,6 +231,83 @@
           -->
         </div>
       </section>
+      <section id="14" class="exercise">
+        <h2>
+          <span>14.&nbsp;</span>A JavaScript exercise to get the extension of a
+          filename.
+        </h2>
+        <div class="solution">
+          <strong>Solution</strong>
+          <form>
+            <fieldset>
+              <legend>Enter a filename and press 'Get' button</legend>
+              <input
+                type="text"
+                name="filename"
+                placeholder="readme.txt"
+                required
+              />
+            </fieldset>
+            <button type="button">Get</button>
+          </form>
+        </div>
+      </section>
+      <section id="15" class="exercise">
+        <h2>
+          <span>15.&nbsp;</span>A JavaScript program to get the difference
+          between a given number and 13, if the number is greater than 13 return
+          double the absolute difference.
+        </h2>
+        <div class="solution">
+          <strong>Solution</strong>
+          <form>
+            <fieldset>
+              <legend>Enter a number and press 'Result' button</legend>
+              <input type="number" name="number" placeholder="8" required />
+            </fieldset>
+            <button type="button">Result</button>
+          </form>
+        </div>
+      </section>
+      <section id="16" class="exercise">
+        <h2>
+          <span>16.&nbsp;</span>A JavaScript program to compute the sum of the
+          two given integers. If the two values are same, then returns triple
+          their sum.
+        </h2>
+        <div class="solution">
+          <strong>Solution</strong>
+          <form>
+            <fieldset>
+              <legend>Enter two numbers and press 'Result' button</legend>
+              <label for="n1">Enter first number</label>
+              <input type="number" name="n1" placeholder="16" required />
+              <label for="n2">Enter second number</label>
+              <input type="number" name="n2" placeholder="8" required />
+            </fieldset>
+            <button type="button">Result</button>
+          </form>
+        </div>
+      </section>
+      <!--
+      <section id="17" class="exercise">
+        <h2>
+          <span>17.&nbsp;</span>A JavaScript program to compute the absolute
+          difference between a specified number and 19. Returns triple their
+          absolute difference if the specified number is greater than 19.
+        </h2>
+        <div class="solution">
+          <strong>Solution</strong>
+          <form>
+            <fieldset>
+              <legend>Enter a number and press 'Result' button</legend>
+              <input type="number" name="n1" placeholder="16" required />
+            </fieldset>
+            <button type="button">Result</button>
+          </form>
+        </div>
+      </section>
+      -->
     </main>
     <aside>
       <p>
@@ -249,7 +316,7 @@
           href="https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php"
           target="_blank"
           rel="noopener noreferrer"
-          >w3resource.com</a
+          >w3resource</a
         >, I did it for my personal purpose of studying and practicing
         javascript.
       </p>
@@ -271,13 +338,3 @@
     you have intentionally disabled it, please re-enable it.
   </noscript>
 </html>
-<!--
-  <section id="" class="exercise">
-    <h2>
-      <span>.&nbsp;</span>
-    </h2>
-    <div class="solution">
-      <strong>Solution</strong>
-    </div>
-  </section>
--->

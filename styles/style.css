@@ -1,3 +1,14 @@
+/* SUMMARY
+  0. Variables
+  1. Base
+  2. Globals
+  3. Header
+  4. Main
+  5. Aside
+  6. Footer
+  7. Media queries
+/* 0. Variables
+  ============================= */
 :root {
   --blue: #3f51b5;
   --lightblue: #05a6f1;
@@ -14,10 +25,12 @@
   --f-size-l: 1.9rem;
   --f-size-xl: 2.2rem;
 }
+/* 1. Base
+  ============================= */
 html {
-  font-size: 62.5%;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-size: 62.5%;
 }
 *,
 *:before,
@@ -25,8 +38,8 @@ html {
   box-sizing: inherit;
 }
 body {
-  font-size: 16px;
   font-family: var(--f-family-base);
+  font-size: var(--f-size-base);
 }
 img {
   max-width: 100%;
@@ -37,9 +50,6 @@ h1 {
 }
 h2 {
   font-size: var(--f-size-l);
-}
-p {
-  font-size: var(--f-size-base);
 }
 small {
   font-size: var(--f-size-xs);
@@ -60,6 +70,16 @@ a:hover {
 a:active {
   color: var(--green);
 }
+/* 2. Globals
+  ============================= */
+.t-a-left {
+  text-align: left;
+}
+.d-block {
+  display: block;
+}
+/* 3. Header
+  ============================= */
 header {
   background-color: var(--blue);
   color: var(--white);
@@ -74,44 +94,33 @@ header p {
 header p span {
   font-size: var(--f-size-s);
 }
+/* 4. Main
+  ============================= */
 main {
   margin: auto;
 }
-aside {
-  font-size: var(--f-size-base);
-  background-color: var(--blue);
-  color: var(--white);
-  padding: 1rem;
-}
-footer {
-  padding: 1rem;
-}
-footer img {
-  max-width: 1.1rem;
-}
-.exercise {
+main .exercise {
   margin: 1rem;
   border: thin solid var(--blue);
   border-radius: 1rem;
   padding: 1rem;
 }
-.exercise h2 {
+main .exercise h2 {
   font-weight: normal;
 }
-.exercise h2 span {
+main .exercise h2 span {
   font-weight: bold;
 }
-.solution {
+main .solution {
   border-top: thin dashed var(--blue);
   text-align: center;
 }
-.solution strong {
+main .solution strong {
   font-size: var(--f-size-s);
   font-weight: normal;
   color: var(--blue);
 }
-.solution button {
-  font-size: var(--f-size-base);
+main .solution button {
   background-color: var(--blue);
   color: var(--white);
   border: none;
@@ -123,71 +132,81 @@ footer img {
   white-space: nowrap;
   text-decoration: none;
 }
-.solution button:hover {
+main .solution button:hover {
   background-color: var(--white);
   color: var(--blue);
   border: thin solid var(--blue);
   font-weight: bolder;
 }
-.solution button:focus {
+main .solution button:focus {
   outline: none;
 }
-.solution form {
+main .solution form {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
 }
-.solution form fieldset {
+main .solution form fieldset {
   text-align: left;
   border: none;
 }
-.solution form legend {
+main .solution form legend {
   margin-bottom: 1rem;
   font-style: italic;
 }
-.solution form input {
+main .solution form input {
   display: block;
   width: 100%;
   margin: 1rem auto;
 }
-.solution form input[type="radio"] {
+main .solution form input[type="radio"] {
   display: inline;
   width: 8rem;
 }
-.solution .result {
+main .solution .result {
   padding: 1rem;
   max-width: 80%;
   margin: 1rem auto;
   border-radius: 1rem;
 }
-.solution .btn-group {
+main .solution .btn-group {
   display: flex;
 }
-.solution .success {
+main .solution .success {
   background-color: var(--green);
   color: var(--white);
 }
-.solution .warning {
+main .solution .warning {
   background-color: var(--yellow);
   color: var(--black);
 }
-.solution .danger {
+main .solution .danger {
   background-color: var(--red);
   color: var(--white);
 }
-.t-a-left {
-  text-align: left;
+/* 5. Aside
+  ============================= */
+aside {
+  font-size: var(--f-size-base);
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 1rem;
 }
-.d-block {
-  display: block;
+/* 6. Footer
+  ============================= */
+footer {
+  padding: 1rem;
 }
-/* Media queries
+footer img {
+  max-width: 1.1rem;
+}
+/* 7. Media queries
   ============================= */
 @media screen and (min-width: 480px) {
   main {
     max-width: 420px;
   }
-  .solution form input[type="radio"] {
+  main .solution form input[type="radio"] {
     width: 16rem;
   }
   small {
@@ -214,10 +233,10 @@ footer img {
   footer {
     padding: 1rem 2rem;
   }
-  .exercise {
+  main .exercise {
     max-width: 34rem;
   }
-  .solution form input[type="radio"] {
+  main .solution form input[type="radio"] {
     width: 8rem;
   }
 }
@@ -226,7 +245,7 @@ footer img {
   main {
     max-width: 960px;
   }
-  .exercise {
+  main .exercise {
     max-width: 30rem;
   }
 }
@@ -235,12 +254,10 @@ footer img {
   main {
     max-width: 1140px;
   }
-  .exercise {
+  main .exercise {
     max-width: 26rem;
   }
-  .solution form input[type="radio"] {
+  main .solution form input[type="radio"] {
     width: 4rem;
   }
 }
-/*
-  ============================= */

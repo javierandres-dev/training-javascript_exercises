@@ -355,25 +355,92 @@ export function exercise016() {
   });
 }
 export function exercise017() {
-  /*
   const $div = d.getElementById("17"),
     $solution = $div.querySelector(".solution"),
     $form = $solution.querySelector("form"),
     $btn = $form.querySelector("button");
   $btn.addEventListener("click", () => {
+    if ($form.number.value.length === 0) {
+      showResult("17", "warning", "Enter a number");
+      return;
+    }
+    try {
+      const number = parseInt($form.number.value);
+      if (number > 19) {
+        showResult("17", "success", `${(number - 19) * 3}`);
+      } else {
+        showResult("17", "success", `${19 - number}`);
+      }
+    } catch (error) {
+      showResult("17", "danger", `Error: ${error}`);
+    }
+  });
+}
+export function exercise018() {
+  const $div = d.getElementById("18"),
+    $solution = $div.querySelector(".solution"),
+    $form = $solution.querySelector("form"),
+    $btn = $form.querySelector("button");
+  $btn.addEventListener("click", () => {
     if ($form.n1.value.length === 0 || $form.n2.value.length === 0) {
-      showResult("17", "warning", "All fields are required");
+      showResult("18", "warning", "All fields are required");
       return;
     }
     try {
       const a = parseInt($form.n1.value),
         b = parseInt($form.n2.value);
-      showResult("17", "success", `${a} + ${b} = ${a + b}`);
+      a === 50 || b === 50 || a + b === 50
+        ? showResult("18", "success", "true")
+        : showResult("18", "info", "false");
     } catch (error) {
-      showResult("17", "danger", `Error: ${error}`);
+      showResult("18", "danger", `Error: ${error}`);
     }
   });
-  */
+}
+export function exercise019() {
+  const $div = d.getElementById("19"),
+    $solution = $div.querySelector(".solution"),
+    $form = $solution.querySelector("form"),
+    $btn = $form.querySelector("button");
+  $btn.addEventListener("click", () => {
+    if ($form.number.value.length === 0) {
+      showResult("19", "warning", "Enter a number");
+      return;
+    }
+    try {
+      const number = parseInt($form.number.value);
+      if (Math.abs(100 - number) <= 20) {
+        showResult("19", "success", `${number} is within 20 of 100`);
+      } else if (Math.abs(400 - number) <= 20) {
+        showResult("19", "success", `${number} is within 20 of 400`);
+      } else {
+        showResult("19", "warning", `${number} is out of both ranges`);
+      }
+    } catch (error) {
+      showResult("19", "danger", `Error: ${error}`);
+    }
+  });
+}
+export function exercise020() {
+  const $div = d.getElementById("20"),
+    $solution = $div.querySelector(".solution"),
+    $form = $solution.querySelector("form"),
+    $btn = $form.querySelector("button");
+  $btn.addEventListener("click", () => {
+    if ($form.n1.value.length === 0 || $form.n2.value.length === 0) {
+      showResult("20", "warning", "All fields are required");
+      return;
+    }
+    try {
+      const a = parseInt($form.n1.value),
+        b = parseInt($form.n2.value);
+      (a < 0 && b > 0) || (a > 0 && b < 0)
+        ? showResult("20", "success", "true")
+        : showResult("20", "info", "false");
+    } catch (error) {
+      showResult("20", "danger", `Error: ${error}`);
+    }
+  });
 }
 const showResult = (id, type, message) => {
   const $div = d.getElementById(id),

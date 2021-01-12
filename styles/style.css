@@ -176,6 +176,10 @@ main .solution .success {
   background-color: var(--green);
   color: var(--white);
 }
+main .solution .info {
+  border: thin dotted var(--blue);
+  color: var(--blue);
+}
 main .solution .warning {
   background-color: var(--yellow);
   color: var(--black);

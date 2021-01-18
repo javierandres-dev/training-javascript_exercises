@@ -2,11 +2,10 @@
   0. Variables
   1. Base
   2. Globals
-  3. Header
+  .devder
   4. Main
-  5. Aside
-  6. Footer
-  7. Media queries
+  5. Footer
+  6. Media queries
 /* 0. Variables
   ============================= */
 :root {
@@ -80,18 +79,20 @@ a:active {
 }
 /* 3. Header
   ============================= */
-header {
+.dev {
+  position: sticky;
+  top: 0;
   background-color: var(--blue);
   color: var(--white);
   padding: 1rem;
 }
-header h1 {
+.dev h1 {
   text-align: center;
 }
-header p {
+.dev p {
   text-align: right;
 }
-header p span {
+.dev p span {
   font-size: var(--f-size-s);
 }
 /* 4. Main
@@ -188,23 +189,16 @@ main .solution .danger {
   background-color: var(--red);
   color: var(--white);
 }
-/* 5. Aside
+/* 5. Footer
   ============================= */
-aside {
+footer {
   font-size: var(--f-size-base);
   background-color: var(--blue);
   color: var(--white);
   padding: 1rem;
+  text-align: center;
 }
-/* 6. Footer
-  ============================= */
-footer {
-  padding: 1rem;
-}
-footer img {
-  max-width: 1.1rem;
-}
-/* 7. Media queries
+/* 6. Media queries
   ============================= */
 @media screen and (min-width: 480px) {
   main {
@@ -216,13 +210,10 @@ footer img {
   small {
     font-size: var(--f-size-s);
   }
-  footer img {
-    max-width: 2rem;
-  }
 }
 
 @media screen and (min-width: 768px) {
-  header {
+  .dev {
     display: flex;
     justify-content: space-between;
   }
@@ -232,8 +223,7 @@ footer img {
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  header,
-  aside,
+  .dev,
   footer {
     padding: 1rem 2rem;
   }

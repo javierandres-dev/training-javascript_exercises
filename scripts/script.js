@@ -20,6 +20,7 @@ import {
   exercise018,
   exercise019,
   exercise020,
+  exercise021,
 } from "./basic.js";
 exercise001();
 exercise002();
@@ -41,3 +42,4 @@ exercise017();
 exercise018();
 exercise019();
 exercise020();
+exercise021();

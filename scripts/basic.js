@@ -442,6 +442,21 @@ export function exercise020() {
     }
   });
 }
+export function exercise021() {
+  const $div = d.getElementById("21"),
+    $form = $div.querySelector("form"),
+    $input = $form.querySelector("#in20");
+  $form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if ($input.value === "")
+      return showResult(21, "warning", "Enter a string.");
+    if ($input.value.startsWith("Py")) {
+      showResult(21, "success", $input.value);
+    } else {
+      showResult(21, "success", `Py${$input.value}`);
+    }
+  });
+}
 const showResult = (id, type, message) => {
   const $div = d.getElementById(id),
     $solution = $div.querySelector(".solution");

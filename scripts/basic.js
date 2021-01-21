@@ -466,6 +466,102 @@ export function exercise022() {
     e.preventDefault();
     if ($string.value === "" || $position.value === "")
       return showResult(22, "warning", "All fields are required.");
+    if ($position.value > $string.value.length - 1 || $position.value < 0)
+      return showResult(22, "warning", "Out of range.");
+    try {
+      let newStr = "";
+      for (let i = 0; i < $string.value.length; i++) {
+        if (i != $position.value) newStr += $string.value[i];
+      }
+      showResult(22, "success", `${newStr}`);
+    } catch (error) {
+      showResult(22, "danger", `Error: ${error}`);
+    }
+  });
+}
+export function exercise023() {
+  const $div = d.getElementById("23"),
+    $form = $div.querySelector("form"),
+    $string = $form.querySelector("#in23");
+  $form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if ($string.value === "")
+      return showResult(23, "warning", "Enter a string.");
+    if ($string.value.length < 1)
+      return showResult(
+        23,
+        "warning",
+        "The string length must be greater than or equal to 1."
+      );
+    if ($string.value.length === 1)
+      return showResult(23, "success", `${$string.value}`);
+    try {
+      let newStr = "";
+      for (let i = 0; i < $string.value.length; i++) {
+        if (i === 0) {
+          newStr += $string.value[$string.value.length - 1];
+        } else if (i === $string.value.length - 1) {
+          newStr += $string.value[0];
+        } else {
+          newStr += $string.value[i];
+        }
+      }
+      showResult(23, "success", `${newStr}`);
+    } catch (error) {
+      showResult(23, "danger", `Error: ${error}`);
+    }
+  });
+}
+export function exercise024() {
+  const $div = d.getElementById("24"),
+    $form = $div.querySelector("form"),
+    $string = $form.querySelector("#in24");
+  $form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if ($string.value === "")
+      return showResult(24, "warning", "Enter a string.");
+    try {
+      let newStr = $string.value[0];
+      for (let i = 0; i < $string.value.length; i++) {
+        newStr += $string.value[i];
+      }
+      newStr += $string.value[0];
+      showResult(24, "success", `${newStr}`);
+    } catch (error) {
+      showResult(24, "danger", `Error: ${error}`);
+    }
+  });
+}
+export function exercise025() {
+  const $div = d.getElementById("25"),
+    $form = $div.querySelector("form"),
+    $number = $form.querySelector("#in25");
+  $form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if ($number.value === "")
+      return showResult(25, "warning", "Enter a number.");
+    if ($number.value === "0")
+      return showResult(25, "success", "0 isn't multiple of 3, nor of 7.");
+    try {
+      const number = $number.value;
+      if (number % 3 === 0 || number % 7 === 0) {
+        if (number % 3 === 0 && number % 7 === 0) {
+          showResult(
+            25,
+            "success",
+            `${number} is multiple of 3, also is multiple of 7.`
+          );
+        } else if (number % 3 === 0) {
+          showResult(25, "success", `${number} is multiple of 3.`);
+        } else {
+          showResult(25, "success", `${number} is multiple of 7.`);
+        }
+      } else {
+        showResult(25, "success", `${number} isn't multiple of 3, nor of 7.`);
+      }
+    } catch (error) {
+      showResult(25, "danger", `Error: ${error}`);
+    }
   });
 }
 const showResult = (id, type, message) => {

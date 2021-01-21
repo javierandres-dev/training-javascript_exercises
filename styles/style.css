@@ -1,15 +1,19 @@
 /* SUMMARY
   0. Custom properties
   1. Base
-  2. Helpers
+  2. Developer
   3. Title
-  4. Main
-  5. Aside
-  6. Media queries
-/* 0. CUSTOM PROPERTIES
+  4. Container
+  5. Exercise
+  6. Solution
+  7. Description
+  8. Media queries
+
+  0. CUSTOM PROPERTIES
   ============================= */
 :root {
   --blue: #3f51b5;
+  --lightblue: #448aff;
   --white: #ffffff;
   --black: #000000;
   --green: #2ecc40;
@@ -26,9 +30,9 @@
 /* 1. BASE
   ============================= */
 html {
+  font-size: 62.5%;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-size: 62.5%;
 }
 *,
 *:before,
@@ -43,15 +47,8 @@ img {
   max-width: 100%;
   height: auto;
 }
-h1 {
-  font-size: var(--f-size-xl);
-}
-h2 {
-  font-size: var(--f-size-l);
-}
-small {
-  font-size: var(--f-size-xs);
-}
+/* 2. DEVELOPER
+  ============================= */
 .dev {
   margin: 0;
   color: gray;
@@ -69,27 +66,21 @@ small {
   text-decoration: underline;
 }
 .dev a:active {
+  font-style: italic;
+  text-decoration: underline;
   color: gray;
 }
 .dev h1,
 .dev h2 {
   margin: 0;
-  font-size: 1.6rem;
-  padding: 0.8rem 1.6rem;
+  font-size: 16px;
+  padding: 8px 16px;
 }
 .dev h1 {
   text-align: start;
 }
 .dev h2 {
   text-align: end;
-}
-/* 2. HELPERS
-  ============================= */
-.t-a-left {
-  text-align: left;
-}
-.d-block {
-  display: block;
 }
 /* 3. TITLE
   ============================= */
@@ -101,34 +92,39 @@ small {
   text-align: center;
   text-transform: capitalize;
 }
-/* 4. MAIN
+/* 4. CONTAINER
   ============================= */
-main {
+.container {
+  width: 92%;
   margin: auto;
 }
-main .exercise {
+/* 5. EXERCISE
+  ============================= */
+.exercise {
   margin: 1rem;
   border: thin solid var(--blue);
   border-radius: 1rem;
   padding: 1rem;
 }
-main .exercise h4 {
+.exercise h4 {
   font-weight: normal;
 }
-main .exercise h4 span {
+.exercise h4 span {
   font-weight: bold;
 }
-main .solution {
-  border-top: thin dashed var(--blue);
+/* 6. SOLUTION
+  ============================= */
+.solution {
+  border-top: thin dashed var(--lightblue);
   text-align: center;
 }
-main .solution strong {
+.solution strong {
   font-size: var(--f-size-s);
   font-weight: normal;
-  color: var(--blue);
+  color: var(--lightblue);
 }
-main .solution button {
-  background-color: var(--blue);
+.solution button {
+  background-color: var(--lightblue);
   color: var(--white);
   border: none;
   width: 10rem;
@@ -138,121 +134,131 @@ main .solution button {
   cursor: pointer;
   white-space: nowrap;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
-main .solution button:hover {
+.solution button:hover {
   background-color: var(--white);
-  color: var(--blue);
-  border: thin solid var(--blue);
+  color: var(--lightblue);
+  border: thin solid var(--lightblue);
   font-weight: bolder;
 }
-main .solution button:focus {
+.solution button:focus {
   outline: none;
 }
-main .solution form {
+.solution form {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
 }
-main .solution form fieldset {
+.solution form fieldset {
   text-align: left;
   border: none;
 }
-main .solution form legend {
+.solution form legend {
   margin-bottom: 1rem;
   font-style: italic;
 }
-main .solution form input {
+.solution form input {
   display: block;
   width: 100%;
   margin: 1rem auto;
 }
-main .solution form input[type="radio"] {
+.solution form input[type="radio"] {
   display: inline;
   width: 8rem;
 }
-main .solution .result {
+.solution .result {
   padding: 1rem;
   max-width: 80%;
   margin: 1rem auto;
   border-radius: 1rem;
 }
-main .solution .btn-group {
+.solution .btn-group {
   display: flex;
 }
-main .solution .success {
+.solution .success {
   background-color: var(--green);
   color: var(--white);
 }
-main .solution .info {
-  border: thin dotted var(--blue);
+.solution .info {
+  border: thin dotted var(--lightblue);
   color: var(--blue);
 }
-main .solution .warning {
+.solution .warning {
   background-color: var(--yellow);
   color: var(--black);
 }
-main .solution .danger {
+.solution .danger {
   background-color: var(--red);
   color: var(--white);
 }
-/* 5. ASIDE
+/* 7. DESCRIPTION
   ============================= */
-aside {
+.description {
   font-size: var(--f-size-base);
   background-color: var(--blue);
   color: var(--white);
   padding: 1rem;
   text-align: center;
 }
-/* 6. MEDIA QUERIES
+.description a {
+  color: var(--lightblue);
+}
+.description a:link {
+  text-decoration: none;
+}
+.description a:visited {
+  font-style: italic;
+}
+.description a:hover {
+  color: var(--white);
+}
+.description a:active {
+  color: var(--green);
+}
+/* 8. MEDIA QUERIES
   ============================= */
 @media screen and (min-width: 480px) {
-  main {
+  .container {
     max-width: 420px;
   }
-  main .solution form input[type="radio"] {
+  .solution form input[type="radio"] {
     width: 16rem;
   }
-  small {
-    font-size: var(--f-size-s);
-  }
 }
-
 @media screen and (min-width: 768px) {
-  main {
+  .container {
     max-width: 720px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  aside {
+  .description {
     padding: 1rem 2rem;
   }
-  main .exercise {
+  .exercise {
     max-width: 34rem;
   }
-  main .solution form input[type="radio"] {
+  .solution form input[type="radio"] {
     width: 8rem;
   }
 }
-
 @media screen and (min-width: 1024px) {
-  main {
+  .container {
     max-width: 960px;
   }
-  main .exercise {
+  .exercise {
     max-width: 30rem;
   }
 }
-
 @media screen and (min-width: 1200px) {
-  main {
+  .container {
     max-width: 1140px;
   }
-  main .exercise {
+  .exercise {
     max-width: 26rem;
   }
-  main .solution form input[type="radio"] {
+  .solution form input[type="radio"] {
     width: 4rem;
   }
 }

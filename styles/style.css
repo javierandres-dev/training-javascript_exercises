@@ -1,16 +1,15 @@
 /* SUMMARY
-  0. Variables
+  0. Custom properties
   1. Base
-  2. Globals
-  .devder
+  2. Helpers
+  3. Title
   4. Main
-  5. Footer
+  5. Aside
   6. Media queries
-/* 0. Variables
+/* 0. CUSTOM PROPERTIES
   ============================= */
 :root {
   --blue: #3f51b5;
-  --lightblue: #05a6f1;
   --white: #ffffff;
   --black: #000000;
   --green: #2ecc40;
@@ -24,7 +23,7 @@
   --f-size-l: 1.9rem;
   --f-size-xl: 2.2rem;
 }
-/* 1. Base
+/* 1. BASE
   ============================= */
 html {
   box-sizing: border-box;
@@ -53,23 +52,38 @@ h2 {
 small {
   font-size: var(--f-size-xs);
 }
-a {
-  color: var(--lightblue);
+.dev {
+  margin: 0;
+  color: gray;
 }
-a:link {
+.dev a {
+  color: #05a6f1;
+}
+.dev a:link {
   text-decoration: none;
 }
-a:visited {
+.dev a:visited {
   font-style: italic;
 }
-a:hover {
+.dev a:hover {
   text-decoration: underline;
-  color: var(--black);
 }
-a:active {
-  color: var(--green);
+.dev a:active {
+  color: gray;
 }
-/* 2. Globals
+.dev h1,
+.dev h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  padding: 0.8rem 1.6rem;
+}
+.dev h1 {
+  text-align: start;
+}
+.dev h2 {
+  text-align: end;
+}
+/* 2. HELPERS
   ============================= */
 .t-a-left {
   text-align: left;
@@ -77,25 +91,17 @@ a:active {
 .d-block {
   display: block;
 }
-/* 3. Header
+/* 3. TITLE
   ============================= */
-.dev {
-  position: sticky;
-  top: 0;
+.title {
+  margin: 0;
+  padding: 2rem;
   background-color: var(--blue);
   color: var(--white);
-  padding: 1rem;
-}
-.dev h1 {
   text-align: center;
+  text-transform: capitalize;
 }
-.dev p {
-  text-align: right;
-}
-.dev p span {
-  font-size: var(--f-size-s);
-}
-/* 4. Main
+/* 4. MAIN
   ============================= */
 main {
   margin: auto;
@@ -106,10 +112,10 @@ main .exercise {
   border-radius: 1rem;
   padding: 1rem;
 }
-main .exercise h2 {
+main .exercise h4 {
   font-weight: normal;
 }
-main .exercise h2 span {
+main .exercise h4 span {
   font-weight: bold;
 }
 main .solution {
@@ -189,16 +195,16 @@ main .solution .danger {
   background-color: var(--red);
   color: var(--white);
 }
-/* 5. Footer
+/* 5. ASIDE
   ============================= */
-footer {
+aside {
   font-size: var(--f-size-base);
   background-color: var(--blue);
   color: var(--white);
   padding: 1rem;
   text-align: center;
 }
-/* 6. Media queries
+/* 6. MEDIA QUERIES
   ============================= */
 @media screen and (min-width: 480px) {
   main {
@@ -213,18 +219,13 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
-  .dev {
-    display: flex;
-    justify-content: space-between;
-  }
   main {
     max-width: 720px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  .dev,
-  footer {
+  aside {
     padding: 1rem 2rem;
   }
   main .exercise {

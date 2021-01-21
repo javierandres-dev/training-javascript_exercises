@@ -445,7 +445,7 @@ export function exercise020() {
 export function exercise021() {
   const $div = d.getElementById("21"),
     $form = $div.querySelector("form"),
-    $input = $form.querySelector("#in20");
+    $input = $form.querySelector("#in21");
   $form.addEventListener("submit", (e) => {
     e.preventDefault();
     if ($input.value === "")
@@ -455,6 +455,17 @@ export function exercise021() {
     } else {
       showResult(21, "success", `Py${$input.value}`);
     }
+  });
+}
+export function exercise022() {
+  const $div = d.getElementById("22"),
+    $form = $div.querySelector("form"),
+    $string = $form.querySelector("#in22a"),
+    $position = $form.querySelector("#in22b");
+  $form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if ($string.value === "" || $position.value === "")
+      return showResult(22, "warning", "All fields are required.");
   });
 }
 const showResult = (id, type, message) => {

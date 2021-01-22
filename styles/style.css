@@ -1,7 +1,7 @@
 /* SUMMARY
   0. Custom properties
   1. Base
-  2. Developer
+  2. JAGP
   3. Title
   4. Container
   5. Exercise
@@ -47,40 +47,41 @@ img {
   max-width: 100%;
   height: auto;
 }
-/* 2. DEVELOPER
+/* 2. JAGP
   ============================= */
-.dev {
+.jagp {
   margin: 0;
+  font-family: sans-serif;
   color: gray;
 }
-.dev a {
+.jagp a {
   color: #05a6f1;
 }
-.dev a:link {
+.jagp a:link {
   text-decoration: none;
 }
-.dev a:visited {
+.jagp a:visited {
   font-style: italic;
 }
-.dev a:hover {
+.jagp a:hover {
   text-decoration: underline;
 }
-.dev a:active {
+.jagp a:active {
   font-style: italic;
   text-decoration: underline;
   color: gray;
 }
-.dev h1,
-.dev h2 {
+.jagp h1,
+.jagp h2 {
   margin: 0;
   font-size: 16px;
   padding: 8px 16px;
 }
-.dev h1 {
-  text-align: start;
+.jagp h1 {
+  text-align: left;
 }
-.dev h2 {
-  text-align: end;
+.jagp h2 {
+  text-align: right;
 }
 /* 3. TITLE
   ============================= */

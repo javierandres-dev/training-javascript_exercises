@@ -3,7 +3,7 @@
 
 ## Description
 Website is inspired and based on the exercises proposed in [w3resource](https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php).  
-How does it look? Take a look at [JavaScript exercises](https://javierandresgp.github.io/github_pages-javascript_exercises/)
+How does it look? Take a look at [JavaScript Exercises](https://javierandresgp.github.io/github_pages-javascript_exercises/)
 
 ## Stack
 * HTML
@@ -11,4 +11,4 @@ How does it look? Take a look at [JavaScript exercises](https://javierandresgp.g
 * JavaScript
 
 ## Software engineer
-[Javier Andrés GP](https://www.javierandresgp.com)
+[Javier Andrés Garzón Patarroyo](https://www.javierandresgp.com)

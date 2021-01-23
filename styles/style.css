@@ -1,13 +1,13 @@
 /* SUMMARY
   0. Custom properties
   1. Base
-  2. JAGP
-  3. Title
-  4. Container
-  5. Exercise
-  6. Solution
-  7. Description
-  8. Media queries
+  2. Title
+  3. Container
+  4. Exercise
+  5. Solution
+  6. Description
+  7. Media queries
+  8. JAGP
 
   0. CUSTOM PROPERTIES
   ============================= */
@@ -47,43 +47,7 @@ img {
   max-width: 100%;
   height: auto;
 }
-/* 2. JAGP
-  ============================= */
-.jagp {
-  margin: 0;
-  font-family: sans-serif;
-  color: gray;
-}
-.jagp a {
-  color: #05a6f1;
-}
-.jagp a:link {
-  text-decoration: none;
-}
-.jagp a:visited {
-  font-style: italic;
-}
-.jagp a:hover {
-  text-decoration: underline;
-}
-.jagp a:active {
-  font-style: italic;
-  text-decoration: underline;
-  color: gray;
-}
-.jagp h1,
-.jagp h2 {
-  margin: 0;
-  font-size: 16px;
-  padding: 8px 16px;
-}
-.jagp h1 {
-  text-align: left;
-}
-.jagp h2 {
-  text-align: right;
-}
-/* 3. TITLE
+/* 2. TITLE
   ============================= */
 .title {
   margin: 0;
@@ -93,13 +57,13 @@ img {
   text-align: center;
   text-transform: capitalize;
 }
-/* 4. CONTAINER
+/* 3. CONTAINER
   ============================= */
 .container {
   width: 92%;
   margin: auto;
 }
-/* 5. EXERCISE
+/* 4. EXERCISE
   ============================= */
 .exercise {
   margin: 1rem;
@@ -113,7 +77,7 @@ img {
 .exercise h4 span {
   font-weight: bold;
 }
-/* 6. SOLUTION
+/* 5. SOLUTION
   ============================= */
 .solution {
   border-top: thin dashed var(--lightblue);
@@ -158,6 +122,7 @@ img {
 .solution form legend {
   margin-bottom: 1rem;
   font-style: italic;
+  text-align: center;
 }
 .solution form input {
   display: block;
@@ -168,14 +133,14 @@ img {
   display: inline;
   width: 8rem;
 }
+.solution .btn-group {
+  display: flex;
+}
 .solution .result {
   padding: 1rem;
   max-width: 80%;
   margin: 1rem auto;
   border-radius: 1rem;
-}
-.solution .btn-group {
-  display: flex;
 }
 .solution .success {
   background-color: var(--green);
@@ -193,7 +158,7 @@ img {
   background-color: var(--red);
   color: var(--white);
 }
-/* 7. DESCRIPTION
+/* 6. DESCRIPTION
   ============================= */
 .description {
   font-size: var(--f-size-base);
@@ -217,7 +182,7 @@ img {
 .description a:active {
   color: var(--green);
 }
-/* 8. MEDIA QUERIES
+/* 7. MEDIA QUERIES
   ============================= */
 @media screen and (min-width: 480px) {
   .container {
@@ -262,4 +227,43 @@ img {
   .solution form input[type="radio"] {
     width: 4rem;
   }
+}
+/* 8. JAGP
+  ============================= */
+.jagp {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: lighter;
+  color: gray;
+}
+.jagp a {
+  color: #05a6f1;
+}
+.jagp a:link {
+  text-decoration: none;
+}
+.jagp a:visited {
+  font-style: italic;
+}
+.jagp a:hover {
+  text-decoration: underline;
+}
+.jagp a:active {
+  font-style: italic;
+  text-decoration: underline;
+  color: gray;
+}
+.jagp h1,
+.jagp h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: lighter;
+  padding: 8px 16px;
+}
+.jagp h1 {
+  text-align: left;
+}
+.jagp h2 {
+  text-align: right;
 }

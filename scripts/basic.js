@@ -11,6 +11,7 @@ const d = document,
   ];
 let flag = 0,
   caller = undefined;
+//
 export function exercise001() {
   const $div = d.getElementById("1"),
     $solution = $div.querySelector(".solution"),
@@ -34,11 +35,13 @@ export function exercise001() {
     minutes < 10 ? "0" + minutes : minutes
   } : ${seconds < 10 ? "0" + seconds : seconds}`;
 }
+//
 export function exercise002() {
   const $div = d.getElementById("2"),
     $btn = $div.querySelector("button");
   $btn.addEventListener("click", () => window.print());
 }
+//
 export function exercise003() {
   const $div = d.getElementById("3"),
     $solution = $div.querySelector(".solution"),
@@ -46,6 +49,7 @@ export function exercise003() {
     date = new Date().toLocaleDateString();
   $span.textContent = `${date}`;
 }
+//
 export function exercise004() {
   const $div = d.getElementById("4"),
     $form = $div.querySelector("form"),
@@ -77,6 +81,7 @@ export function exercise004() {
     }
   });
 }
+//
 export function exercise005() {
   const $div = d.getElementById("5"),
     $solution = $div.querySelector(".solution"),
@@ -90,6 +95,7 @@ export function exercise005() {
   };
   fn("Hello, World!.");
 }
+//
 export function exercise006() {
   const $div = d.getElementById("6"),
     $form = $div.querySelector("form"),
@@ -114,6 +120,7 @@ export function exercise006() {
     }
   });
 }
+//
 export function exercise007() {
   const $div = d.getElementById("7"),
     $p = $div.querySelector("p");
@@ -132,6 +139,7 @@ export function exercise007() {
     start++;
   }
 }
+//
 export function exercise008() {
   const r = Math.floor(Math.random() * 10 + 1),
     $div = d.getElementById("8"),
@@ -157,6 +165,7 @@ export function exercise008() {
     }
   });
 }
+//
 export function exercise009() {
   const $div = d.getElementById("9"),
     $solution = $div.querySelector(".solution"),
@@ -168,6 +177,7 @@ export function exercise009() {
     remainingDays = Math.floor(difference / (1000 * 60 * 60 * 24));
   $span.textContent = `${remainingDays} `;
 }
+//
 export function exercise010() {
   const $div = d.getElementById("10"),
     $form = $div.querySelector("form"),
@@ -205,6 +215,7 @@ export function exercise010() {
     }
   });
 }
+//
 export function exercise011() {
   const $div = d.getElementById("11"),
     $form = $div.querySelector("form"),
@@ -250,6 +261,7 @@ export function exercise011() {
     }
   });
 }
+//
 export function exercise012() {
   const $div = d.getElementById("12"),
     $solution = $div.querySelector(".solution"),
@@ -257,6 +269,7 @@ export function exercise012() {
   $p.textContent = `Website URL is: ${d.URL}`;
   $solution.appendChild($p);
 }
+//
 export function exercise013() {
   /*
   const $div = d.getElementById("13"),
@@ -266,6 +279,7 @@ export function exercise013() {
   $solution.appendChild($p);
   */
 }
+//
 export function exercise014() {
   const $div = d.getElementById("14"),
     $solution = $div.querySelector(".solution"),
@@ -295,6 +309,7 @@ export function exercise014() {
     }
   });
 }
+//
 export function exercise015() {
   const $div = d.getElementById("15"),
     $solution = $div.querySelector(".solution"),
@@ -327,6 +342,7 @@ export function exercise015() {
     }
   });
 }
+//
 export function exercise016() {
   const $div = d.getElementById("16"),
     $solution = $div.querySelector(".solution"),
@@ -354,6 +370,7 @@ export function exercise016() {
     }
   });
 }
+//
 export function exercise017() {
   const $div = d.getElementById("17"),
     $solution = $div.querySelector(".solution"),
@@ -376,6 +393,7 @@ export function exercise017() {
     }
   });
 }
+//
 export function exercise018() {
   const $div = d.getElementById("18"),
     $solution = $div.querySelector(".solution"),
@@ -397,6 +415,7 @@ export function exercise018() {
     }
   });
 }
+//
 export function exercise019() {
   const $div = d.getElementById("19"),
     $solution = $div.querySelector(".solution"),
@@ -421,6 +440,7 @@ export function exercise019() {
     }
   });
 }
+//
 export function exercise020() {
   const $div = d.getElementById("20"),
     $solution = $div.querySelector(".solution"),
@@ -442,6 +462,7 @@ export function exercise020() {
     }
   });
 }
+//
 export function exercise021() {
   const $div = d.getElementById("21"),
     $form = $div.querySelector("form"),
@@ -457,6 +478,7 @@ export function exercise021() {
     }
   });
 }
+//
 export function exercise022() {
   const $div = d.getElementById("22"),
     $form = $div.querySelector("form"),
@@ -479,6 +501,7 @@ export function exercise022() {
     }
   });
 }
+//
 export function exercise023() {
   const $div = d.getElementById("23"),
     $form = $div.querySelector("form"),
@@ -512,6 +535,7 @@ export function exercise023() {
     }
   });
 }
+//
 export function exercise024() {
   const $div = d.getElementById("24"),
     $form = $div.querySelector("form"),
@@ -532,6 +556,7 @@ export function exercise024() {
     }
   });
 }
+//
 export function exercise025() {
   const $div = d.getElementById("25"),
     $form = $div.querySelector("form"),
@@ -564,6 +589,68 @@ export function exercise025() {
     }
   });
 }
+//
+export function exercise026() {
+  const $div = d.getElementById("26"),
+    $form = $div.querySelector("form"),
+    $string = $form.querySelector("#in26");
+  $form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if ($string.value === "")
+      return showResult(26, "warning", "Enter a string.");
+    if ($string.value.length < 3)
+      return showResult(26, "warning", "The string length must be 3 or more.");
+    try {
+      let newStr = $string.value.substring($string.value.length - 3);
+      newStr = newStr + $string.value + newStr;
+      showResult(26, "success", `${newStr}`);
+    } catch (error) {
+      showResult(26, "danger", `Error: ${error}`);
+    }
+  });
+}
+//
+export function exercise027() {
+  const $div = d.getElementById("27"),
+    $form = $div.querySelector("form"),
+    $string = $form.querySelector("#in27");
+  $form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if ($string.value === "")
+      return showResult(27, "warning", "Enter a string.");
+    if ($string.value.length < 4) return showResult(27, "warning", false);
+    try {
+      $string.value.startsWith("Java")
+        ? showResult(27, "success", `${$string.value.startsWith("Java")}`)
+        : showResult(27, "info", `${$string.value.startsWith("Java")}`);
+    } catch (error) {
+      showResult(27, "danger", `Error: ${error}`);
+    }
+  });
+}
+//
+export function exercise028() {
+  const $div = d.getElementById("28"),
+    $form = $div.querySelector("form"),
+    $n1 = $form.querySelector("#in28a"),
+    $n2 = $form.querySelector("#in28b");
+  $form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (
+      $n1.value === "" ||
+      isNaN($n1.value) !== false ||
+      $n2.value === "" ||
+      isNaN($n2.value) !== false
+    )
+      return showResult(28, "warning", "Enter two numbers.");
+    try {
+      console.log($n1.value, $n2.value);
+    } catch (error) {
+      showResult(28, "danger", `Error: ${error}`);
+    }
+  });
+}
+// print result on the user interface
 const showResult = (id, type, message) => {
   const $div = d.getElementById(id),
     $solution = $div.querySelector(".solution");

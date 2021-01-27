@@ -7,7 +7,7 @@
   5. Solution
   6. Description
   7. Media queries
-  8. JAGP
+  8. Developer
 
   0. CUSTOM PROPERTIES
   ============================= */
@@ -228,42 +228,35 @@ img {
     width: 4rem;
   }
 }
-/* 8. JAGP
-  ============================= */
-.jagp {
-  margin: 0;
+/* DEVELOPER
+============================= */
+.dev {
   font-family: sans-serif;
   font-size: 16px;
   font-weight: lighter;
   color: gray;
+  padding: 8px 16px;
 }
-.jagp a {
+.dev .top {
+  text-align: left;
+}
+.dev .bottom {
+  text-align: right;
+}
+.dev a {
   color: #05a6f1;
 }
-.jagp a:link {
+.dev a:link {
   text-decoration: none;
 }
-.jagp a:visited {
+.dev a:visited {
   font-style: italic;
 }
-.jagp a:hover {
+.dev a:hover {
   text-decoration: underline;
 }
-.jagp a:active {
+.dev a:active {
   font-style: italic;
   text-decoration: underline;
   color: gray;
-}
-.jagp h1,
-.jagp h2 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: lighter;
-  padding: 8px 16px;
-}
-.jagp h1 {
-  text-align: left;
-}
-.jagp h2 {
-  text-align: right;
 }

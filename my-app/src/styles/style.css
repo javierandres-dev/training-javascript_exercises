@@ -3,9 +3,10 @@
   1. Base
   2. Header
   3. Nav
-  4. Main
-  5. Aside
-  6. Footer
+  4. Footer
+
+Solution
+Message
 
   3. Container
   4. Exercise
@@ -81,10 +82,20 @@ a:active {
 }
 /* 3. NAV
   ============================= */
-/* 4. MAIN
-  ============================= */
-/* 5. ASIDE
-  ============================= */
+.nav {
+}
+.nav .btn {
+  border: none;
+  background: none;
+  color: var(--lightblue);
+  cursor: pointer;
+}
+.nav .btn:hover {
+  color: var(--blue);
+}
+.nav .btn:focus {
+  outline: none;
+}
 /* 6. FOOTER
   ============================= */
 .footer {
@@ -92,14 +103,50 @@ a:active {
   color: var(--white);
   padding: 1.6rem;
 }
+/* DEVELOPER
+============================= */
+.dev {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: lighter;
+  color: gray;
+  padding: 8px 16px;
+}
+.dev .top {
+  text-align: left;
+}
+.dev .bottom {
+  text-align: right;
+}
+.dev a {
+  color: #05a6f1;
+}
+.dev a:link {
+  text-decoration: none;
+}
+.dev a:visited {
+  font-style: italic;
+}
+.dev a:hover {
+  text-decoration: underline;
+}
+.dev a:active {
+  font-style: italic;
+  text-decoration: underline;
+  color: gray;
+}
+/*
+/* 5. ASIDE
+  =============================
+
 /* 3. CONTAINER
-  ============================= */
+  =============================
 .container {
   width: 92%;
   margin: auto;
 }
 /* 4. EXERCISE
-  ============================= */
+  =============================
 .exercise {
   margin: 1rem;
   border: thin solid var(--blue);
@@ -113,7 +160,7 @@ a:active {
   font-weight: bold;
 }
 /* 5. SOLUTION
-  ============================= */
+  =============================
 .solution {
   border-top: thin dashed var(--lightblue);
   text-align: center;
@@ -194,7 +241,7 @@ a:active {
   color: var(--white);
 }
 /* 7. MEDIA QUERIES
-  ============================= */
+  =============================
 @media screen and (min-width: 480px) {
   .container {
     max-width: 420px;
@@ -239,35 +286,4 @@ a:active {
     width: 4rem;
   }
 }
-/* DEVELOPER
-============================= */
-.dev {
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: lighter;
-  color: gray;
-  padding: 8px 16px;
-}
-.dev .top {
-  text-align: left;
-}
-.dev .bottom {
-  text-align: right;
-}
-.dev a {
-  color: #05a6f1;
-}
-.dev a:link {
-  text-decoration: none;
-}
-.dev a:visited {
-  font-style: italic;
-}
-.dev a:hover {
-  text-decoration: underline;
-}
-.dev a:active {
-  font-style: italic;
-  text-decoration: underline;
-  color: gray;
-}
+*/

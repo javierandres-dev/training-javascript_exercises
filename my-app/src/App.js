@@ -1,21 +1,25 @@
 import "./styles/normalize.css";
 import "./styles/style.css";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
-import Main from "./components/Main";
-import Aside from "./components/Aside";
+import Exercise from "./components/Exercise";
 import Footer from "./components/Footer";
+import Empty from "./components/Empty";
 
 function App() {
-  let solution = undefined,
-    message = undefined;
+  const [exercise, setExercise] = useState(0);
+  let component = undefined;
+  if (exercise !== 0) {
+    component = <Exercise exercise={exercise} />;
+  } else {
+    component = <Empty />;
+  }
   return (
     <Fragment>
       <Header />
-      <Nav />
-      <Main />
-      <Aside />
+      <Nav setExercise={setExercise} />
+      {component}
       <Footer />
     </Fragment>
   );

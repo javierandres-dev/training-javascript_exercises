@@ -1,11 +1,16 @@
 /* SUMMARY
   0. Custom properties
   1. Base
-  2. Title
+  2. Header
+  3. Nav
+  4. Main
+  5. Aside
+  6. Footer
+
   3. Container
   4. Exercise
   5. Solution
-  6. Description
+
   7. Media queries
   8. Developer
 
@@ -13,7 +18,7 @@
   ============================= */
 :root {
   --blue: #3f51b5;
-  --lightblue: #448aff;
+  --lightblue: #5a98ff;
   --white: #ffffff;
   --black: #000000;
   --green: #2ecc40;
@@ -47,15 +52,45 @@ img {
   max-width: 100%;
   height: auto;
 }
-/* 2. TITLE
+a {
+  color: var(--lightblue);
+  display: inline-block;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  font-style: italic;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  font-style: italic;
+  text-decoration: underline;
+  color: var(--blue);
+}
+/* 2. HEADER
   ============================= */
-.title {
-  margin: 0;
-  padding: 2rem;
+.header {
   background-color: var(--blue);
   color: var(--white);
   text-align: center;
   text-transform: capitalize;
+  padding: 0.5rem;
+}
+/* 3. NAV
+  ============================= */
+/* 4. MAIN
+  ============================= */
+/* 5. ASIDE
+  ============================= */
+/* 6. FOOTER
+  ============================= */
+.footer {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 1.6rem;
 }
 /* 3. CONTAINER
   ============================= */
@@ -158,30 +193,6 @@ img {
   background-color: var(--red);
   color: var(--white);
 }
-/* 6. DESCRIPTION
-  ============================= */
-.description {
-  font-size: var(--f-size-base);
-  background-color: var(--blue);
-  color: var(--white);
-  padding: 1rem;
-  text-align: center;
-}
-.description a {
-  color: var(--lightblue);
-}
-.description a:link {
-  text-decoration: none;
-}
-.description a:visited {
-  font-style: italic;
-}
-.description a:hover {
-  color: var(--white);
-}
-.description a:active {
-  color: var(--green);
-}
 /* 7. MEDIA QUERIES
   ============================= */
 @media screen and (min-width: 480px) {
@@ -199,7 +210,7 @@ img {
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  .description {
+  .footer {
     padding: 1rem 2rem;
   }
   .exercise {

@@ -1,15 +1,20 @@
 import React from "react";
 
-const Nav = ({ setExercise }) => {
+const Nav = ({ setExercise, setTitle }) => {
+  const titles = [
+    0,
+    "A JavaScript program to display the current day and time.",
+  ];
   return (
     <nav className="nav">
       <ol>
         <li>
-          A JavaScript program to display the current day and time.
+          {titles[1]}
           <button
             className="btn"
             onClick={() => {
               setExercise(1);
+              setTitle(titles[1]);
             }}
           >
             Click me to see my solution

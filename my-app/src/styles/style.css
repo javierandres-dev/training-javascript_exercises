@@ -5,6 +5,8 @@
   3. Nav
   4. Footer
 
+exercise
+
 Solution
 Message
 
@@ -83,17 +85,22 @@ a:active {
 /* 3. NAV
   ============================= */
 .nav {
+  display: flex;
+  justify-content: space-evenly;
 }
-.nav .btn {
+.nav button {
+  background-color: var(--lightblue);
+  border-radius: 50%;
   border: none;
-  background: none;
-  color: var(--lightblue);
+  color: var(--white);
   cursor: pointer;
+  flex: 0 0 auto;
+  margin: 1rem;
 }
-.nav .btn:hover {
-  color: var(--blue);
+.nav button:hover {
+  background-color: var(--blue);
 }
-.nav .btn:focus {
+.nav button:focus {
   outline: none;
 }
 /* 6. FOOTER
@@ -135,47 +142,31 @@ a:active {
   text-decoration: underline;
   color: gray;
 }
-/*
-/* 5. ASIDE
-  =============================
-
-/* 3. CONTAINER
-  =============================
-.container {
-  width: 92%;
-  margin: auto;
-}
-/* 4. EXERCISE
-  =============================
+/* EXERCISE
+  ============================= */
 .exercise {
-  margin: 1rem;
+  width: min(92%, 32rem);
+  margin: 2rem auto;
   border: thin solid var(--blue);
   border-radius: 1rem;
   padding: 1rem;
 }
-.exercise h4 {
+.exercise h2 {
   font-weight: normal;
 }
-.exercise h4 span {
+.exercise h2 span {
   font-weight: bold;
 }
-/* 5. SOLUTION
-  =============================
-.solution {
+.exercise__solution {
   border-top: thin dashed var(--lightblue);
   text-align: center;
 }
-.solution strong {
-  font-size: var(--f-size-s);
-  font-weight: normal;
-  color: var(--lightblue);
-}
-.solution button {
+.exercise__solution button {
   background-color: var(--lightblue);
   color: var(--white);
   border: none;
   width: 10rem;
-  margin: auto;
+  margin: 2rem auto;
   padding: 1rem;
   border-radius: 1rem;
   cursor: pointer;
@@ -183,14 +174,56 @@ a:active {
   text-decoration: none;
   transition: all 0.2s ease-in-out;
 }
-.solution button:hover {
+.exercise__solution button:hover {
   background-color: var(--white);
   color: var(--lightblue);
   border: thin solid var(--lightblue);
   font-weight: bolder;
 }
-.solution button:focus {
+.exercise__solution button:focus {
   outline: none;
+}
+/*
+/* ALERT
+  ============================= */
+.alert {
+  text-align: center;
+  width: min(50%, 32rem);
+  margin: auto;
+}
+.alert .success,
+.alert .warning,
+.alert .danger {
+  border-radius: 2rem;
+  padding: 1rem;
+}
+.alert .success {
+  background-color: var(--green);
+  color: var(--white);
+}
+.alert .warning {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+.alert .danger {
+  background-color: var(--red);
+  color: var(--white);
+}
+/* 3. CONTAINER
+  =============================
+✔️
+⚠️
+☠️
+.container {
+  width: 92%;
+  margin: auto;
+}
+/* 5. SOLUTION
+  =============================
+.solution strong {
+  font-size: var(--f-size-s);
+  font-weight: normal;
+  color: var(--lightblue);
 }
 .solution form {
   margin-top: 1rem;
@@ -217,16 +250,6 @@ a:active {
 }
 .solution .btn-group {
   display: flex;
-}
-.solution .result {
-  padding: 1rem;
-  max-width: 80%;
-  margin: 1rem auto;
-  border-radius: 1rem;
-}
-.solution .success {
-  background-color: var(--green);
-  color: var(--white);
 }
 .solution .info {
   border: thin dotted var(--lightblue);

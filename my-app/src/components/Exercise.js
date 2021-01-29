@@ -7,7 +7,7 @@ const Exercise = ({ exercise, title }) => {
   }, 1);
   return (
     <main role="main" className="exercise">
-      <h2 className="exercise__title">
+      <h2>
         <span>{exercise}. </span>
         {title}
       </h2>

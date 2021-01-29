@@ -8,9 +8,9 @@ import Footer from "./components/Footer";
 
 function App() {
   const [exercise, setExercise] = useState(0),
-    [title, setTitle] = useState(false);
+    [title, setTitle] = useState(undefined);
   let component = undefined;
-  if (exercise !== 0 && title !== false) {
+  if (exercise !== 0 && title !== undefined) {
     component = <Exercise exercise={exercise} title={title} />;
   } else {
     component = null;

@@ -3,8 +3,9 @@ import "./styles/style.css";
 import { Fragment, useState } from "react";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
-import Exercise from "./components/Exercise";
+import Aside from "./components/Aside";
 import Footer from "./components/Footer";
+import Exercise from "./components/Exercise";
 
 function App() {
   const [exercise, setExercise] = useState(0),
@@ -20,6 +21,7 @@ function App() {
       <Header />
       <Nav setExercise={setExercise} setTitle={setTitle} />
       {component}
+      <Aside />
       <Footer />
     </Fragment>
   );

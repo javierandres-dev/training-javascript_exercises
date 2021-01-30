@@ -6,8 +6,18 @@ import {
   exercise4,
   exercise5,
   exercise6,
+  exercise7,
+  exercise8,
 } from "./basic";
 export default function program(id) {
+  try {
+    const execute = `exercise${id}`;
+    console.log(execute);
+    execute();
+  } catch (error) {
+    console.warn(error);
+  }
+  /*
   switch (id) {
     case 1:
       exercise1();
@@ -27,8 +37,15 @@ export default function program(id) {
     case 6:
       exercise6();
       break;
+    case 7:
+      exercise7();
+      break;
+    case 8:
+      exercise8();
+      break;
     default:
       printAlert("danger", `☠️ Error: The exercise${id} doesn't exist!`);
       break;
   }
+*/
 }

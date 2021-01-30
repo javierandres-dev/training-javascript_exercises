@@ -1,75 +1,20 @@
 import React from "react";
-import getTitle from "../helpers/getTitle";
+import getTitles from "../helpers/getTitles";
 
 const Nav = ({ setExercise, setTitle }) => {
-  return (
-    <nav className="nav">
+  const titles = getTitles(),
+    buttons = titles.map((title, idx) => (
       <button
+        key={idx + 1}
         onClick={() => {
-          setExercise(1);
-          setTitle(getTitle(1));
+          setExercise(idx + 1);
+          setTitle(title);
         }}
       >
-        1
+        {idx + 1}
       </button>
-      <button
-        onClick={() => {
-          setExercise(2);
-          setTitle(getTitle(2));
-        }}
-      >
-        2
-      </button>
-      <button
-        onClick={() => {
-          setExercise(3);
-          setTitle(getTitle(3));
-        }}
-      >
-        3
-      </button>
-      <button
-        onClick={() => {
-          setExercise(4);
-          setTitle(getTitle(4));
-        }}
-      >
-        4
-      </button>
-      <button
-        onClick={() => {
-          setExercise(5);
-          setTitle(getTitle(5));
-        }}
-      >
-        5
-      </button>
-      <button
-        onClick={() => {
-          setExercise(6);
-          setTitle(getTitle(6));
-        }}
-      >
-        6
-      </button>
-      <button
-        onClick={() => {
-          setExercise(7);
-          setTitle(getTitle(7));
-        }}
-      >
-        7
-      </button>
-      <button
-        onClick={() => {
-          setExercise(8);
-          setTitle(getTitle(8));
-        }}
-      >
-        8
-      </button>
-    </nav>
-  );
+    ));
+  return <nav className="nav">{buttons}</nav>;
 };
 
 export default Nav;

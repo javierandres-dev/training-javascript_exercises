@@ -11,7 +11,6 @@ const Exercise = ({ exercise, title }) => {
         <span>{exercise}. </span>
         {title}
       </h2>
-      <aside className="alert"></aside>
       <div className="exercise__solution"></div>
     </main>
   );

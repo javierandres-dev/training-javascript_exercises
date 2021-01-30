@@ -6,7 +6,7 @@ const Exercise = ({ exercise, title }) => {
     program(exercise);
   }, 1);
   return (
-    <main role="main" className="exercise">
+    <main role="main" className="container exercise">
       <h2>
         <span>{exercise}. </span>
         {title}

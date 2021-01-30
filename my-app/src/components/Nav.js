@@ -14,7 +14,7 @@ const Nav = ({ setExercise, setTitle }) => {
         {idx + 1}
       </button>
     ));
-  return <nav className="nav">{buttons}</nav>;
+  return <nav className="container nav">{buttons}</nav>;
 };
 
 export default Nav;

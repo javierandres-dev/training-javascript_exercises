@@ -65,7 +65,7 @@ export function exercise4() {
 <form>
   <fieldset>
     <legend>
-      Enter the three side lengths and press 'Calculate' button
+      Enter the three side lengths and press 'RESULT' button
     </legend>
     <label>Number of the first side</label>
     <input type="number" placeholder="e.g. 2" required/>
@@ -124,7 +124,7 @@ export function exercise6() {
   $sol.innerHTML = `
 <form>
   <fieldset>
-    <legend>Enter a year and press 'Check' button</legend>
+    <legend>Enter a year and press 'RESULT' button</legend>
     <label>Enter a year</label>
     <input
       type="number"
@@ -188,11 +188,12 @@ export function exercise8() {
   <fieldset>
     <legend>Guess number</legend>
     <label
-      >Enter a number between 1 to 10 and press 'Check' button</label
+      >Enter a number between 1 to 10 and press 'RESULT' button</label
     >
     <input
       type="number"
       name="number"
+      min="1" max="10"
       placeholder="e.g. 8"
 
     />

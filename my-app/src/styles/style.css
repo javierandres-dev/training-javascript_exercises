@@ -84,17 +84,20 @@ a:active {
 /* 4. NAV
   ================================ */
 .nav {
+  margin: 2rem auto;
   display: flex;
   justify-content: space-between;
-  margin: 2rem auto;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 .nav button {
+  width: 3rem;
+  height: 3rem;
   background-color: var(--lightblue);
   border-radius: 50%;
   border: none;
   color: var(--white);
   cursor: pointer;
-  flex: 0 0 auto;
 }
 .nav button:hover {
   background-color: var(--blue);
@@ -180,7 +183,8 @@ a:active {
 }
 .alert .success,
 .alert .warning,
-.alert .danger {
+.alert .danger,
+.alert .info {
   border-radius: 2rem;
   padding: 1rem;
 }
@@ -196,6 +200,10 @@ a:active {
   background-color: var(--red);
   color: var(--white);
 }
+.alert .info {
+  border: thin dotted var(--lightblue);
+  color: var(--blue);
+}
 /* 7. FOOTER
   ================================ */
 .footer {
@@ -209,10 +217,16 @@ a:active {
   .container {
     max-width: 420px;
   }
+  .exercise__solution form input[type="radio"] {
+    width: 16rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .container {
     max-width: 720px;
+  }
+  .exercise__solution form input[type="radio"] {
+    width: 8rem;
   }
   .footer {
     text-align: center;
@@ -226,6 +240,9 @@ a:active {
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1140px;
+  }
+  .exercise__solution form input[type="radio"] {
+    width: 4rem;
   }
 }
 /* 9. DEVELOPER

@@ -17,6 +17,17 @@ import {
   exercise15,
   exercise16,
   exercise17,
+  exercise18,
+  exercise19,
+  exercise20,
+  exercise21,
+  exercise22,
+  exercise23,
+  exercise24,
+  exercise25,
+  exercise26,
+  exercise27,
+  exercise28,
 } from "./basic";
 export default function program(id) {
   try {
@@ -71,6 +82,39 @@ export default function program(id) {
         break;
       case 17:
         exercise17();
+        break;
+      case 18:
+        exercise18();
+        break;
+      case 19:
+        exercise19();
+        break;
+      case 20:
+        exercise20();
+        break;
+      case 21:
+        exercise21();
+        break;
+      case 22:
+        exercise22();
+        break;
+      case 23:
+        exercise23();
+        break;
+      case 24:
+        exercise24();
+        break;
+      case 25:
+        exercise25();
+        break;
+      case 26:
+        exercise26();
+        break;
+      case 27:
+        exercise27();
+        break;
+      case 28:
+        exercise28();
         break;
       default:
         printAlert("danger", `☠️ Error: The exercise${id} doesn't exist!`);

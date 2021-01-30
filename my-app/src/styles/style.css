@@ -167,6 +167,9 @@ a:active {
   border: none;
   border-bottom: thin solid var(--lightblue);
 }
+.exercise__solution form input:focus {
+  outline: none;
+}
 .exercise__solution form input[type="radio"] {
   display: inline;
   width: 8rem;

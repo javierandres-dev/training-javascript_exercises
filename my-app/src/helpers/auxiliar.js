@@ -38,7 +38,7 @@ export const printAlert = (type, content) => {
 
 export const cleanPrevious = () => {
   const $a = d.querySelector(".exercise__solution"),
-  $b = d.querySelector(".alert");
+    $b = d.querySelector(".alert");
   $a.innerHTML = null;
   $b.innerHTML = null;
-}
+};

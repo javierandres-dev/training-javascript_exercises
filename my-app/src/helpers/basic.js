@@ -1,6 +1,7 @@
-import { printAlert, getWeekDays, validateForm } from "./auxiliar";
+import { cleanPrevious, printAlert, getWeekDays, validateForm } from "./auxiliar";
 const d = document;
 export function exercise1() {
+  cleanPrevious();
   try {
     const weekDays = getWeekDays(),
       $sol = d.querySelector(".exercise__solution"),
@@ -24,7 +25,6 @@ export function exercise1() {
     $p2.textContent = `${hours < 10 ? "0" + hours : hours} ${period} : ${
       minutes < 10 ? "0" + minutes : minutes
     } : ${seconds < 10 ? "0" + seconds : seconds}`;
-    $sol.innerHTML = null;
     $sol.appendChild($p1);
     $sol.appendChild($p2);
     printAlert("success", "✔️ Done!");
@@ -33,12 +33,12 @@ export function exercise1() {
   }
 }
 export function exercise2() {
+  cleanPrevious();
   try {
     const $sol = d.querySelector(".exercise__solution"),
       $btn = d.createElement("button");
     $btn.textContent = "Print";
     $btn.addEventListener("click", () => window.print());
-    $sol.innerHTML = null;
     $sol.appendChild($btn);
     printAlert("success", "✔️ Done!");
   } catch (error) {
@@ -46,12 +46,12 @@ export function exercise2() {
   }
 }
 export function exercise3() {
+  cleanPrevious();
   try {
     const $sol = d.querySelector(".exercise__solution"),
       $p = d.createElement("p"),
       date = new Date().toLocaleDateString();
     $p.textContent = `${date}`;
-    $sol.innerHTML = null;
     $sol.appendChild($p);
     printAlert("success", "✔️ Done!");
   } catch (error) {
@@ -59,8 +59,8 @@ export function exercise3() {
   }
 }
 export function exercise4() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -101,6 +101,7 @@ export function exercise4() {
   });
 }
 export function exercise5() {
+  cleanPrevious();
   try {
     const $sol = d.querySelector(".exercise__solution"),
       $p = d.createElement("p"),
@@ -111,7 +112,6 @@ export function exercise5() {
         rotate[rotate.length - 1] + rotate.substring(0, rotate.length - 1);
       $p.textContent = rotate;
     }, 500);
-    $sol.innerHTML = null;
     $sol.appendChild($p);
     printAlert("success", "✔️ Done!");
   } catch (error) {
@@ -119,19 +119,14 @@ export function exercise5() {
   }
 }
 export function exercise6() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
     <legend>Enter a year and press 'RESULT' button</legend>
     <label>Enter a year</label>
-    <input
-      type="number"
-      name="year"
-      placeholder="e.g. 1976"
-      required
-    />
+    <input type="number" name="year" placeholder="e.g. 1976" required />
   </fieldset>
   <button type="submit">RESULT</button>
 </form>
@@ -156,6 +151,7 @@ export function exercise6() {
   });
 }
 export function exercise7() {
+  cleanPrevious();
   try {
     const $sol = d.querySelector(".exercise__solution"),
       $p = d.createElement("p"),
@@ -173,7 +169,6 @@ export function exercise7() {
       }
       start++;
     }
-    $sol.innerHTML = null;
     $sol.appendChild($p);
     printAlert("success", "✔️ Done!");
   } catch (error) {
@@ -181,22 +176,14 @@ export function exercise7() {
   }
 }
 export function exercise8() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
     <legend>Guess number</legend>
-    <label
-      >Enter a number between 1 to 10 and press 'RESULT' button</label
-    >
-    <input
-      type="number"
-      name="number"
-      min="1" max="10"
-      placeholder="e.g. 8"
-      required
-    />
+    <label>Enter a number between 1 to 10 and press 'RESULT' button</label>
+    <input type="number" name="number" min="1" max="10" placeholder="e.g. 8" required />
   </fieldset>
   <button type="submit">RESULT</button>
 </form>
@@ -222,6 +209,7 @@ export function exercise8() {
   });
 }
 export function exercise9() {
+  cleanPrevious();
   try {
     const $sol = d.querySelector(".exercise__solution"),
       $p = d.createElement("p"),
@@ -231,7 +219,6 @@ export function exercise9() {
       difference = nextChristmas - today,
       remainingDays = Math.floor(difference / (1000 * 60 * 60 * 24));
     $p.textContent = `${remainingDays} days until next Christmas.`;
-    $sol.innerHTML = null;
     $sol.appendChild($p);
     printAlert("success", "✔️ Done!");
   } catch (error) {
@@ -239,8 +226,8 @@ export function exercise9() {
   }
 }
 export function exercise10() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -288,19 +275,14 @@ export function exercise10() {
   });
 }
 export function exercise11() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
     <legend>Enter degrees and select a type convertion</legend>
     <label for="degrees">Enter degrees</label>
-    <input
-      type="number"
-      name="degrees"
-      placeholder="e.g. 11"
-      required
-    />
+    <input type="number" name="degrees" placeholder="e.g. 11" required />
     <input type="radio" name="to" id="CtoF" />
     <label for="CtoF">Celsius to Fahrenheit</label>
     <input type="radio" name="to" id="FtoC" />
@@ -348,11 +330,11 @@ export function exercise11() {
   });
 }
 export function exercise12() {
+  cleanPrevious();
   try {
     const $sol = d.querySelector(".exercise__solution"),
       $p = d.createElement("p");
     $p.textContent = `URL: ${d.URL}`;
-    $sol.innerHTML = null;
     $sol.appendChild($p);
     printAlert("success", "✔️ Done!");
   } catch (error) {
@@ -360,19 +342,19 @@ export function exercise12() {
   }
 }
 export function exercise13() {
+  cleanPrevious();
   /*
   const $sol = d.querySelector(".exercise__solution"),
     $p = d.createElement("p");
-  $p.textContent = "";
-  $sol.innerHTML = null;
+  $p.textContent = ""
   $solution.appendChild($p);
 */
   printAlert("info", "🚶 Unsolved");
   console.info("Unsolved");
 }
 export function exercise14() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -400,8 +382,8 @@ export function exercise14() {
   });
 }
 export function exercise15() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -437,8 +419,8 @@ export function exercise15() {
   });
 }
 export function exercise16() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -474,8 +456,8 @@ export function exercise16() {
   });
 }
 export function exercise17() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -493,9 +475,9 @@ export function exercise17() {
     try {
       const number = parseInt($form.number.value);
       if (number > 19) {
-        printAlert("success", `✔️ ${(number - 19) * 3}`);
+        printAlert("success", `✔️ Triple absolute difference: ${(number - 19) * 3}`);
       } else {
-        printAlert("success", `✔️ ${19 - number}`);
+        printAlert("success", `✔️ Absolute difference: ${19 - number}`);
       }
     } catch (error) {
       printAlert("danger", `☠️ Error: ${error}`);
@@ -503,8 +485,8 @@ export function exercise17() {
   });
 }
 export function exercise18() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -534,8 +516,8 @@ export function exercise18() {
   });
 }
 export function exercise19() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -565,8 +547,8 @@ export function exercise19() {
   });
 }
 export function exercise20() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -596,15 +578,14 @@ export function exercise20() {
   });
 }
 export function exercise21() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
     <legend>Enter a string and press 'RESULT' button</legend>
     <label for="str">Enter a string</label>
-    <input type="text" name="str" id="str" placeholder="e.g. twenty-one" required
-    />
+    <input type="text" name="str" id="str" placeholder="e.g. twenty-one" required />
   </fieldset>
   <button type="submit">RESULT</button>
 </form>
@@ -626,8 +607,8 @@ export function exercise21() {
   });
 }
 export function exercise22() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -661,8 +642,8 @@ export function exercise22() {
   });
 }
 export function exercise23() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -703,8 +684,8 @@ export function exercise23() {
   });
 }
 export function exercise24() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -733,8 +714,8 @@ export function exercise24() {
   });
 }
 export function exercise25() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -774,8 +755,8 @@ export function exercise25() {
   });
 }
 export function exercise26() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -803,8 +784,8 @@ export function exercise26() {
   });
 }
 export function exercise27() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -831,8 +812,8 @@ export function exercise27() {
   });
 }
 export function exercise28() {
-  const $sol = d.querySelector(".exercise__solution");
-  $sol.innerHTML = null;
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution")
   $sol.innerHTML = `
 <form>
   <fieldset>
@@ -865,8 +846,7 @@ printAlert("warning", "⚠️ ");
 printAlert("danger", `☠️ Error: ${error}`);
 printAlert("info", "🚶 Unsolved");
 console.info("Unsolved");
-const $sol = d.querySelector(".exercise__solution");
-$sol.innerHTML = null;
+const $sol = d.querySelector(".exercise__solution"
 $sol.innerHTML = ``;
 if (!validateForm()) return printAlert("warning", "⚠️ All fields are required");
 */

@@ -3,8 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="footer">
-      This website is inspired and based on the exercises proposed in
-      <a
+      This website is inspired and based on the exercises proposed in <a
         href="https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php"
         target="_blank"
         rel="noopener noreferrer"

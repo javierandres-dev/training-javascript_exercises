@@ -35,3 +35,10 @@ export const printAlert = (type, content) => {
     }, 4000);
   }
 };
+
+export const cleanPrevious = () => {
+  const $a = d.querySelector(".exercise__solution"),
+  $b = d.querySelector(".alert");
+  $a.innerHTML = null;
+  $b.innerHTML = null;
+}

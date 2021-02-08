@@ -28,5 +28,7 @@ export default function getTitles() {
     "A JavaScript program to create a new string from a given string taking the last 3 characters and added at both the front and back. The string length must be 3 or more.",
     "A JavaScript program to check whether a string starts with 'Java' and false otherwise.",
     "A JavaScript program to check whether two given integer values are in the range 50..99 (inclusive). Return true if either of them are in the said range.",
+    "A JavaScript program to check whether three given integer values are in the range 50..99 (inclusive). Return true if one or more of them are in the said range.",
+    "A JavaScript program to check whether a string 'Script' presents at 5th (index 4) position in a given string, if 'Script' presents in the string return the string without 'Script' otherwise return the original one.",
   ];
 }

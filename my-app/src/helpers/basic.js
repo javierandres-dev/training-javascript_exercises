@@ -842,9 +842,94 @@ export function exercise28() {
     if (isNaN($form.num1.value) !== false || isNaN($form.num2.value) !== false)
       return printAlert("warning", "⚠️ Enter two numbers.");
     try {
-      printAlert("info", "🔜 Coming soon");
-      console.log($form.num1.value, $form.num2.value);
-      console.info("Pending");
+      if (
+        ($form.num1.value >= 50 && $form.num1.value <= 99) ||
+        ($form.num2.value >= 50 && $form.num2.value <= 99)
+      ) {
+        printAlert("success", "✔️ True");
+      } else {
+        printAlert("info", "False");
+      }
+    } catch (error) {
+      printAlert("danger", `☠️ Error: ${error}`);
+    }
+  });
+}
+export function exercise29() {
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution");
+  $sol.innerHTML = `
+<form>
+  <fieldset>
+    <legend>Enter three numbers and press 'RESULT' button</legend>
+    <label for="num1">Enter first number</label>
+    <input type="number" id="num1" name="num1" placeholder="e.g. 8" required />
+    <label for="num2">Enter second number</label>
+    <input type="number" id="num2" name="num2" placeholder="e.g. 16" required />
+    <label for="num3">Enter third number</label>
+    <input type="number" id="num3" name="num3" placeholder="e.g. 29" required />
+  </fieldset>
+  <button type="submit">RESULT</button>
+</form>
+`;
+  const $form = $sol.querySelector("form");
+  $form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!validateForm())
+      return printAlert("warning", "⚠️ All fields are required");
+    if (
+      isNaN($form.num1.value) !== false ||
+      isNaN($form.num2.value) !== false ||
+      isNaN($form.num3.value) !== false
+    )
+      return printAlert("warning", "⚠️ Enter three numbers.");
+    try {
+      if (
+        ($form.num1.value >= 50 && $form.num1.value <= 99) ||
+        ($form.num2.value >= 50 && $form.num2.value <= 99) ||
+        ($form.num3.value >= 50 && $form.num3.value <= 99)
+      ) {
+        printAlert("success", "✔️ True");
+      } else {
+        printAlert("info", "False");
+      }
+    } catch (error) {
+      printAlert("danger", `☠️ Error: ${error}`);
+    }
+  });
+}
+export function exercise30() {
+  cleanPrevious();
+  const $sol = d.querySelector(".exercise__solution");
+  $sol.innerHTML = `
+<form>
+  <fieldset>
+    <legend>Enter a string and press 'RESULT' button</legend>
+    <label for="str">Enter a string</label>
+    <input type="text" id="str" name="str" placeholder="e.g. This is the word Script in a string" required />
+  </fieldset>
+  <button type="submit">RESULT</button>
+</form>
+`;
+  const $form = $sol.querySelector("form");
+  $form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!validateForm())
+      return printAlert("warning", "⚠️ All fields are required");
+    if ($form.str.value.length < 10)
+      return printAlert("success", `✔️ ${$form.str.value}`);
+    try {
+      const word = $form.str.value.substring(10, 4);
+      if (word === "Script") {
+        if ($form.str.value.length === 10)
+          return printAlert("success", `✔️ ${$form.str.value.substring(0, 4)}`);
+        const str =
+          $form.str.value.substring(4, 0) +
+          $form.str.value.substring(10, $form.str.value.length);
+        printAlert("success", `✔️ ${str}`);
+      } else {
+        printAlert("success", `✔️ ${$form.str.value}`);
+      }
     } catch (error) {
       printAlert("danger", `☠️ Error: ${error}`);
     }
@@ -854,6 +939,7 @@ export function exercise28() {
 printAlert("success", "✔️ Done!");
 printAlert("warning", "⚠️ ");
 printAlert("danger", `☠️ Error: ${error}`);
+printAlert("info", "False");
 printAlert("info", "🔜 Coming soon");
 console.info("Unsolved");
 const $sol = d.querySelector(".exercise__solution"

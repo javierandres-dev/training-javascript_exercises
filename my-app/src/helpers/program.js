@@ -1,4 +1,4 @@
-import { printAlert } from "./auxiliar";
+import { printAlert } from './auxiliar';
 import {
   exercise1,
   exercise2,
@@ -30,7 +30,8 @@ import {
   exercise28,
   exercise29,
   exercise30,
-} from "./basic";
+  exercise31,
+} from './basic';
 export default function program(id) {
   try {
     switch (id) {
@@ -124,8 +125,11 @@ export default function program(id) {
       case 30:
         exercise30();
         break;
+      case 31:
+        exercise31();
+        break;
       default:
-        printAlert("danger", `☠️ Error: The exercise${id} doesn't exist!`);
+        printAlert('danger', `☠️ Error: The exercise${id} doesn't exist!`);
         break;
     }
   } catch (error) {

@@ -31,6 +31,7 @@ import {
   exercise29,
   exercise30,
   exercise31,
+  exercise32,
 } from './basic';
 export default function program(id) {
   try {
@@ -127,6 +128,9 @@ export default function program(id) {
         break;
       case 31:
         exercise31();
+        break;
+      case 32:
+        exercise32();
         break;
       default:
         printAlert('danger', `☠️ Error: The exercise${id} doesn't exist!`);

@@ -975,6 +975,40 @@ export function exercise31() {
     }
   });
 }
+export function exercise32() {
+  cleanPrevious();
+  const $sol = d.querySelector('.exercise__solution');
+  $sol.innerHTML = `
+<form>
+  <fieldset>
+    <legend>Enter two numbers and press 'RESULT' button</legend>
+    <label for="num1">Enter first number</label>
+    <input type="number" id="num1" name="num1" placeholder="e.g. 31" required />
+    <label for="num2">Enter second number</label>
+    <input type="number" id="num2" name="num2" placeholder="e.g. 32" required />
+  </fieldset>
+  <button type="submit">RESULT</button>
+</form>
+`;
+  const $form = $sol.querySelector('form');
+  $form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!validateForm())
+      return printAlert('warning', '⚠️ All fields are required');
+    if (isNaN($form.num1.value) !== false || isNaN($form.num2.value) !== false)
+      return printAlert('warning', '⚠️ Enter two numbers.');
+    try {
+      let nearest = undefined;
+      const n1 = $form.num1.value;
+      const n2 = $form.num2.value;
+      if (n1 != n2) {
+      }
+      printAlert('success', `✔️ ${nearest} is nearest to 100`);
+    } catch (error) {
+      printAlert('danger', `☠️ Error: ${error}`);
+    }
+  });
+}
 /*
 printAlert("success", "✔️ Done!");
 printAlert("warning", "⚠️ ");

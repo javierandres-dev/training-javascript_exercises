@@ -31,5 +31,6 @@ export default function getTitles() {
     'A JavaScript program to check whether three given integer values are in the range 50..99 (inclusive). Return true if one or more of them are in the said range.',
     "A JavaScript program to check whether a string 'Script' presents at 5th (index 4) position in a given string, if 'Script' presents in the string return the string without 'Script' otherwise return the original one.",
     'A JavaScript program to find the largest of three given integers.',
+    'A JavaScript program to find a value which is nearest to 100 from two different given integer values.',
   ];
 }

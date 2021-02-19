@@ -999,11 +999,38 @@ export function exercise32() {
       return printAlert('warning', '⚠️ Enter two numbers.');
     try {
       let nearest = undefined;
-      const n1 = $form.num1.value;
-      const n2 = $form.num2.value;
-      if (n1 != n2) {
+      const n1 = parseInt($form.num1.value);
+      const n2 = parseInt($form.num2.value);
+      if (n1 === 100 && n2 === 100) {
+        nearest = '100';
+      } else if (n1 === 100 || n2 === 100) {
+        if (n1 === 100) {
+          nearest = 'first';
+        } else {
+          nearest = 'second';
+        }
+      } else if (n1 === n2) {
+        nearest = 'same';
+      } else {
+        const a = Math.abs(100 - n1);
+        const b = Math.abs(100 - n2);
+        if (a < b) {
+          nearest = n1;
+        } else {
+          nearest = n2;
+        }
       }
-      printAlert('success', `✔️ ${nearest} is nearest to 100`);
+      if (nearest === '100') {
+        printAlert('success', '✔️ Both numbers are 100');
+      } else if (nearest === 'first') {
+        printAlert('success', '✔️ the first number is 100');
+      } else if (nearest === 'second') {
+        printAlert('success', '✔️ the second number is 100');
+      } else if (nearest === 'same') {
+        printAlert('success', '✔️ Both numbers are same distance of 100');
+      } else {
+        printAlert('success', `✔️ ${nearest} is nearest to 100`);
+      }
     } catch (error) {
       printAlert('danger', `☠️ Error: ${error}`);
     }

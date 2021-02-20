@@ -1036,6 +1036,57 @@ export function exercise32() {
     }
   });
 }
+export function exercise33() {
+  cleanPrevious();
+  const $sol = d.querySelector('.exercise__solution');
+  $sol.innerHTML = `
+<form>
+  <fieldset>
+    <legend>Enter two numbers and press 'RESULT' button</legend>
+    <label for="num1">Enter first number</label>
+    <input type="number" id="num1" name="num1" placeholder="e.g. 32" required />
+    <label for="num2">Enter second number</label>
+    <input type="number" id="num2" name="num2" placeholder="e.g. 33" required />
+  </fieldset>
+  <button type="submit">RESULT</button>
+</form>
+`;
+  const $form = $sol.querySelector('form');
+  $form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!validateForm())
+      return printAlert('warning', '⚠️ All fields are required');
+    if (isNaN($form.num1.value) !== false || isNaN($form.num2.value) !== false)
+      return printAlert('warning', '⚠️ Enter two numbers.');
+    try {
+      let a = undefined,
+        b = undefined;
+      const n1 = parseInt($form.num1.value);
+      const n2 = parseInt($form.num2.value);
+      if ((n1 >= 40 && n1 <= 60) || (n1 >= 70 && n1 <= 100)) {
+        if (n1 >= 40 && n1 <= 60) {
+          a = 'is within the range 40..60';
+        } else {
+          a = 'is within the range 70..100';
+        }
+      } else {
+        a = 'is outside the established ranges';
+      }
+      if ((n2 >= 40 && n2 <= 60) || (n2 >= 70 && n2 <= 100)) {
+        if (n2 >= 70 && n2 <= 100) {
+          b = 'is within the range 70..100';
+        } else {
+          b = 'is within the range 40..60';
+        }
+      } else {
+        b = 'is outside the established ranges';
+      }
+      printAlert('success', `✔️ The first number ${a}, the second number ${b}`);
+    } catch (error) {
+      printAlert('danger', `☠️ Error: ${error}`);
+    }
+  });
+}
 /*
 printAlert("success", "✔️ Done!");
 printAlert("warning", "⚠️ ");

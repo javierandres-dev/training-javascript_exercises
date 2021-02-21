@@ -1,0 +1,286 @@
+/* SUMMARY
+  0. Custom properties
+  1. Base
+  2. Globals
+  3. Header
+  4. Nav
+  5. Exercise
+  6. Alert
+  7. Footer
+  8. Media queries
+  9. Developer
+
+  0. CUSTOM PROPERTIES
+  ================================ */
+:root {
+  --blue: #3f51b5;
+  --lightblue: #5a98ff;
+  --white: #ffffff;
+  --black: #000000;
+  --green: #2ecc40;
+  --yellow: #ffdc00;
+  --red: #ff4136;
+  --f-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --f-size-xs: 1rem;
+  --f-size-s: 1.3rem;
+  --f-size-base: 1.6rem;
+  --f-size-l: 1.9rem;
+  --f-size-xl: 2.2rem;
+}
+/* 1. BASE
+  ================================ */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: var(--f-family-base);
+  font-size: var(--f-size-base);
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: var(--lightblue);
+  display: inline-block;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  font-style: italic;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  font-style: italic;
+  text-decoration: underline;
+  color: var(--blue);
+}
+/* 2. GLOBALS
+  ================================ */
+.container {
+  width: 92%;
+  margin: auto;
+}
+/* 3. HEADER
+  ================================ */
+.header {
+  background-color: var(--blue);
+  color: var(--white);
+  text-align: center;
+  text-transform: capitalize;
+  padding: 0.5rem;
+}
+.header h1 {
+  font-size: var(--f-size-xl);
+}
+/* 4. NAV
+  ================================ */
+.nav {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.nav button {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--lightblue);
+  border-radius: 50%;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+}
+.nav button:hover {
+  background-color: var(--blue);
+}
+.nav button:focus {
+  outline: none;
+}
+/* 5. EXERCISE
+  ================================ */
+.exercise {
+  width: min(92%, 48rem);
+  margin-bottom: 2rem;
+  border: thin solid var(--blue);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.exercise h2 {
+  font-weight: normal;
+}
+.exercise h2 span {
+  font-weight: bold;
+  color: var(--lightblue);
+}
+.exercise__solution {
+  border-top: thin dashed var(--lightblue);
+  text-align: center;
+}
+.exercise__solution button {
+  background-color: var(--lightblue);
+  color: var(--white);
+  border: none;
+  width: 10rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.exercise__solution button:hover {
+  background-color: var(--white);
+  color: var(--lightblue);
+  border: thin solid var(--lightblue);
+  font-weight: bolder;
+}
+.exercise__solution button:focus {
+  outline: none;
+}
+.exercise__solution form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.exercise__solution form fieldset {
+  text-align: left;
+  border: none;
+}
+.exercise__solution form legend {
+  margin-bottom: 1rem;
+  font-style: italic;
+  text-align: center;
+}
+.exercise__solution form input {
+  display: block;
+  width: 100%;
+  margin: 1rem auto;
+  border: none;
+  border-bottom: thin solid var(--lightblue);
+}
+.exercise__solution form input:focus {
+  outline: none;
+}
+.exercise__solution form input[type="radio"] {
+  display: inline;
+  width: 8rem;
+}
+.exercise__solution .btn-group {
+  display: flex;
+}
+/* 6. ALERT
+  ================================ */
+.alert {
+  text-align: center;
+  width: min(50%, 32rem);
+  margin: auto;
+}
+.alert .success,
+.alert .warning,
+.alert .danger,
+.alert .info {
+  border-radius: 2rem;
+  padding: 1rem;
+}
+.alert .success {
+  background-color: var(--green);
+  color: var(--white);
+}
+.alert .warning {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+.alert .danger {
+  background-color: var(--red);
+  color: var(--white);
+}
+.alert .info {
+  border: thin dotted var(--lightblue);
+  color: var(--blue);
+}
+/* 7. FOOTER
+  ================================ */
+.footer {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 1.6rem;
+}
+/* 8. MEDIA QUERIES
+  ================================ */
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 420px;
+  }
+  .exercise__solution form input[type="radio"] {
+    width: 16rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+  .exercise__solution form input[type="radio"] {
+    width: 8rem;
+  }
+  .footer {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  .exercise__solution form input[type="radio"] {
+    width: 4rem;
+  }
+}
+/* 9. DEVELOPER
+================================ */
+.dev {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: lighter;
+  color: gray;
+  padding: 8px 16px;
+}
+.dev .top {
+  text-align: left;
+}
+.dev .bottom {
+  text-align: right;
+}
+.dev a {
+  color: #05a6f1;
+}
+.dev a:link {
+  text-decoration: none;
+}
+.dev a:visited {
+  font-style: italic;
+}
+.dev a:hover {
+  text-decoration: underline;
+}
+.dev a:active {
+  font-style: italic;
+  text-decoration: underline;
+  color: gray;
+}

@@ -6,9 +6,12 @@ Website is inspired and based on the exercises proposed in [w3resource](https://
 How does it look? Take a look at [JavaScript Exercises](https://javierandresgp.github.io/github_pages-javascript_exercises/)
 
 ## Stack
-* HTML
-* CSS
-* JavaScript
+* TYPESCRIPT
+* REACT
+
+## Directories
+:open_file_folder: 0x00 - First version - (HTML - CSS - JS)
+:open_file_folder: 0x01 - Second version - (REACT)
 
 ## Software engineer
 [Javier Andrés Garzón Patarroyo](https://www.javierandresgp.com)

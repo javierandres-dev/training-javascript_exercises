@@ -1,5 +1,4 @@
 import React from 'react';
-import program from '../helpers/program';
 
 type Props = {
   title: string | undefined;
@@ -7,11 +6,21 @@ type Props = {
 };
 
 const Exercise: React.FC<Props> = ({ title, exercise }) => {
-  console.log(title, exercise);
-  program();
+  if (typeof exercise === 'number') {
+    const nameExercise = `exercise${exercise}`;
+    let component = undefined;
+    if (nameExercise === 'exercise1') {
+      import Exercise1 from './exercises/Exercise1';
+      component = Exercise1;
+    }
+  }
   return (
-    <main role='main' id='exercise'>
-      ... exercise ... program;
+    <main role='main'>
+      <h2>
+        <span>{exercise}. </span>
+        {title}
+      </h2>
+      <div id='solution'>{component}</div>
     </main>
   );
 };

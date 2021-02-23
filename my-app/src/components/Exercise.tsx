@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Solution from './solutions/Solution';
 
 type Props = {
   title: string | undefined;
@@ -6,22 +7,20 @@ type Props = {
 };
 
 const Exercise: React.FC<Props> = ({ title, exercise }) => {
+  let component = undefined;
   if (typeof exercise === 'number') {
-    const nameExercise = `exercise${exercise}`;
-    let component = undefined;
-    if (nameExercise === 'exercise1') {
-      import Exercise1 from './exercises/Exercise1';
-      component = Exercise1;
-    }
+    component = <Solution exercise={exercise} />;
   }
   return (
-    <main role='main'>
-      <h2>
-        <span>{exercise}. </span>
-        {title}
-      </h2>
-      <div id='solution'>{component}</div>
-    </main>
+    <Fragment>
+      <main role='main'>
+        <h2>
+          <span>{exercise}. </span>
+          {title}
+        </h2>
+      </main>
+      {component}
+    </Fragment>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Solution from './solutions/Solution';
 
 type Props = {
@@ -12,15 +12,13 @@ const Exercise: React.FC<Props> = ({ title, exercise }) => {
     component = <Solution exercise={exercise} />;
   }
   return (
-    <Fragment>
-      <main role='main'>
+    <section>
         <h2>
           <span>{exercise}. </span>
           {title}
         </h2>
-      </main>
       {component}
-    </Fragment>
+    </section>
   );
 };
 

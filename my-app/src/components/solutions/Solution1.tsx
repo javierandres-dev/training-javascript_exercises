@@ -18,7 +18,7 @@ const Solution1: React.FC = () => {
     period = 'PM';
   }
   return (
-    <>
+    <div>
       <h3>✔️ Done!</h3>
       <p>Today is: {weekDays[day]}</p>
       <p>
@@ -26,7 +26,7 @@ const Solution1: React.FC = () => {
         {minutes < 10 ? '0' + minutes : minutes} :
         {seconds < 10 ? '0' + seconds : seconds}
       </p>
-    </>
+    </div>
   );
 };
 

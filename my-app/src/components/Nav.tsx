@@ -19,7 +19,7 @@ const Nav: React.FC<Props> = ({ setTitle, setExercise }) => {
         {idx + 1}
       </button>
     ));
-  return <nav>{buttons}</nav>;
+  return <nav className='nav'>{buttons}</nav>;
 };
 
 export default Nav;

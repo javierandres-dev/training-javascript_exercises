@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer>
+    <footer className='footer'>
       This website is inspired and based on the exercises proposed in{' '}
       <a
         href='https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php'

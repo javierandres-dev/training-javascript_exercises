@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Welcome: React.FC = () => {
-  return <main role='main'>... welcome ...</main>;
+  return <h2>Welcome</h2>;
 };
 
 export default Welcome;

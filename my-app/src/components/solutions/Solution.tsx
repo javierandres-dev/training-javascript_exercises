@@ -11,7 +11,7 @@ const Solution: React.FC<Props> = ({ exercise }) => {
     component = <Solution1 />;
   }
 
-  return <aside>{component}</aside>;
+  return <section>{component}</section>;
 };
 
 export default Solution;

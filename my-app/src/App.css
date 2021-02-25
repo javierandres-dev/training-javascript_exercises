@@ -135,7 +135,8 @@ a:active {
   border-top: thin dashed var(--lightblue);
 }
 .card-header h2,
-.card-footer h3 {
+.card-footer h3,
+.card-footer h4 {
   font-weight: normal;
 }
 .card-button {
@@ -159,13 +160,6 @@ a:active {
 }
 .card-button:focus {
   outline: none;
-}
-/* 6. STATUS
-  ================================ */
-.status {
-  text-align: center;
-  width: min(50%, 32rem);
-  margin: 2rem auto;
 }
 /* 5. EXERCISE
   ================================ */

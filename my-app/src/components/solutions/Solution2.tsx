@@ -1,19 +1,19 @@
-import { FC, Fragment } from 'react';
+import { Component, Fragment } from 'react';
 import SolFooter from './SolFooter';
-import Button from './Button';
+import { Button } from './Elements';
 
-const Solution2: FC = () => {
-  return (
-    <Fragment>
-      <div className='card-body'>
-        <Button content='PRINT' />
-      </div>
-      <SolFooter
-        instructions='This exercise does not require user interaction.'
-        status={'✔️ Done!'}
-      />
-    </Fragment>
-  );
-};
-
-export default Solution2;
+export default class Solution2 extends Component {
+  render() {
+    return (
+      <Fragment>
+        <div className='card-body'>
+          <Button content='PRINT' clickHandler={() => window.print()} />
+        </div>
+        <SolFooter
+          instructions='Press "PRINT" button'
+          status={'✔️ All ready'}
+        />
+      </Fragment>
+    );
+  }
+}

@@ -138,16 +138,7 @@ a:active {
 .card-footer h3 {
   font-weight: normal;
 }
-/* 6. STATUS
-  ================================ */
-.status {
-  text-align: center;
-  width: min(50%, 32rem);
-  margin: 2rem auto;
-}
-/* 5. EXERCISE
-  ================================ */
-.exercise__solution button {
+.card-button {
   background-color: var(--lightblue);
   color: var(--white);
   border: none;
@@ -160,15 +151,24 @@ a:active {
   text-decoration: none;
   transition: all 0.2s ease-in-out;
 }
-.exercise__solution button:hover {
+.card-button:hover {
   background-color: var(--white);
   color: var(--lightblue);
   border: thin solid var(--lightblue);
   font-weight: bolder;
 }
-.exercise__solution button:focus {
+.card-button:focus {
   outline: none;
 }
+/* 6. STATUS
+  ================================ */
+.status {
+  text-align: center;
+  width: min(50%, 32rem);
+  margin: 2rem auto;
+}
+/* 5. EXERCISE
+  ================================ */
 .exercise__solution form {
   margin-top: 1rem;
   display: flex;

@@ -1,32 +1,20 @@
-import React, { FC, Fragment, useState } from 'react';
-import Solution from './solutions/Solution';
+import { FC } from 'react';
+import SolHeader from './solutions/SolHeader';
+import SolContent from './solutions/SolContent';
 
 type Props = {
-  title: string | undefined;
-  exercise: number | undefined;
+  title: string;
+  exercise: number;
 };
 
 const Exercise: FC<Props> = ({ title, exercise }) => {
-  const [status, setStatus] = useState<string | undefined>(undefined);
-  let component = undefined;
-  if (typeof exercise === 'number') {
-    component = <Solution exercise={exercise} setStatus={setStatus} />;
-  }
   return (
-    <Fragment>
-      <main role='main' className='container'>
-        <section className='card'>
-          <header className='card-header'>
-            <h2>
-              <span>{exercise}. </span>
-              {title}
-            </h2>
-          </header>
-          {component}
-        </section>
-      </main>
-      <aside className='status'>{status}</aside>
-    </Fragment>
+    <main role='main' className='container'>
+      <section className='card'>
+        <SolHeader title={title} exercise={exercise} />
+        <SolContent exercise={exercise} />
+      </section>
+    </main>
   );
 };
 

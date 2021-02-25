@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import { Fragment, useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Nav from './components/Nav';

@@ -9,8 +9,7 @@ import Exercise from './components/Exercise';
 function App() {
   const [title, setTitle] = useState<string | undefined>(undefined),
     [exercise, setExercise] = useState<number | undefined>(undefined);
-  let main = undefined,
-    aside = undefined;
+  let main = undefined;
 
   if (title !== undefined && exercise !== undefined) {
     main = <Exercise title={title} exercise={exercise} />;

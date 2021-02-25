@@ -116,7 +116,7 @@ a:active {
   ================================ */
 .card {
   width: min(92%, 48rem);
-  margin-bottom: 2rem;
+  margin: 2rem auto;
   border: thin solid var(--blue);
   border-radius: 1rem;
   padding: 1rem;
@@ -138,9 +138,15 @@ a:active {
 .card-footer h3 {
   font-weight: normal;
 }
+/* 6. STATUS
+  ================================ */
+.status {
+  text-align: center;
+  width: min(50%, 32rem);
+  margin: 2rem auto;
+}
 /* 5. EXERCISE
   ================================ */
-
 .exercise__solution button {
   background-color: var(--lightblue);
   color: var(--white);
@@ -196,11 +202,6 @@ a:active {
 }
 /* 6. ALERT
   ================================ */
-.alert {
-  text-align: center;
-  width: min(50%, 32rem);
-  margin: auto;
-}
 .alert .success,
 .alert .warning,
 .alert .danger,
@@ -297,3 +298,14 @@ a:active {
   text-decoration: underline;
   color: gray;
 }
+/*
+printAlert("success", "✔️ Done!");
+printAlert("warning", "⚠️ ");
+printAlert("danger", `☠️ Error: ${error}`);
+printAlert("info", "False");
+printAlert("info", "🔜 Coming soon");
+console.info("Unsolved");
+const $sol = d.querySelector(".exercise__solution"
+$sol.innerHTML = ``;
+if (!validateForm()) return printAlert("warning", "⚠️ All fields are required");
+*/

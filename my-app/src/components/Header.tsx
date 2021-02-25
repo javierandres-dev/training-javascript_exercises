@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const Header: React.FC = () => {
+const Header: FC = () => {
   return (
     <header className='header'>
       <h1>javascript basic exercises</h1>

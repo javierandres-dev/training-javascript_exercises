@@ -1,16 +1,16 @@
-import React, { Fragment } from 'react';
+import React, { FC, Fragment, useState } from 'react';
 import Solution from './solutions/Solution';
-import Notification from './Notification';
 
 type Props = {
   title: string | undefined;
   exercise: number | undefined;
 };
 
-const Exercise: React.FC<Props> = ({ title, exercise }) => {
+const Exercise: FC<Props> = ({ title, exercise }) => {
+  const [status, setStatus] = useState<string | undefined>(undefined);
   let component = undefined;
   if (typeof exercise === 'number') {
-    component = <Solution exercise={exercise} />;
+    component = <Solution exercise={exercise} setStatus={setStatus} />;
   }
   return (
     <Fragment>
@@ -25,7 +25,7 @@ const Exercise: React.FC<Props> = ({ title, exercise }) => {
           {component}
         </section>
       </main>
-      <Notification />
+      <aside className='status'>{status}</aside>
     </Fragment>
   );
 };

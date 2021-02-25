@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const Welcome: React.FC = () => {
+const Welcome: FC = () => {
   return (
     <main role='main' className='container t-center'>
       <h2>Welcome</h2>

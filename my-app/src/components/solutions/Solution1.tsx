@@ -1,7 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { FC, Dispatch, SetStateAction, Fragment } from 'react';
 import { getWeekDays } from '../../helpers/auxiliar';
 
-const Solution1: React.FC = () => {
+type Props = {
+  setStatus: Dispatch<SetStateAction<string | undefined>>;
+};
+
+const Solution1: FC<Props> = ({ setStatus }) => {
   const weekDays = getWeekDays(),
     date = new Date(),
     day = date.getDay(),
@@ -17,6 +21,7 @@ const Solution1: React.FC = () => {
     hours = getHours - 12;
     period = 'PM';
   }
+  setStatus('✔️ Done!');
   return (
     <Fragment>
       <div className='card-body'>

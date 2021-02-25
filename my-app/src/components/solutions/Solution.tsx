@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Solution1 from './Solution1';
 
 type Props = {
@@ -11,7 +11,7 @@ const Solution: React.FC<Props> = ({ exercise }) => {
     component = <Solution1 />;
   }
 
-  return <section>{component}</section>;
+  return <Fragment>{component}</Fragment>;
 };
 
 export default Solution;

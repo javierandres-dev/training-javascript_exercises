@@ -72,6 +72,9 @@ a:active {
   width: 92%;
   margin: auto;
 }
+.t-center {
+  text-align: center;
+}
 /* 3. HEADER
   ================================ */
 .header {
@@ -88,6 +91,7 @@ a:active {
   ================================ */
 .nav {
   margin: 2rem auto;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -108,26 +112,35 @@ a:active {
 .nav button:focus {
   outline: none;
 }
-/* 5. EXERCISE
+/* 5. CARD
   ================================ */
-.exercise {
+.card {
   width: min(92%, 48rem);
   margin-bottom: 2rem;
   border: thin solid var(--blue);
   border-radius: 1rem;
   padding: 1rem;
 }
-.exercise h2 {
-  font-weight: normal;
+.card-header {
+  border-bottom: thin dashed var(--lightblue);
 }
-.exercise h2 span {
+.card-header span {
   font-weight: bold;
   color: var(--lightblue);
 }
-.exercise__solution {
-  border-top: thin dashed var(--lightblue);
+.card-body {
   text-align: center;
 }
+.card-footer {
+  border-top: thin dashed var(--lightblue);
+}
+.card-header h2,
+.card-footer h3 {
+  font-weight: normal;
+}
+/* 5. EXERCISE
+  ================================ */
+
 .exercise__solution button {
   background-color: var(--lightblue);
   color: var(--white);

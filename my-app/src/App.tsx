@@ -2,29 +2,27 @@ import React, { Fragment, useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Nav from './components/Nav';
-import Main from './components/Main';
-import Aside from './components/Aside';
 import Footer from './components/Footer';
-import Exercise from './components/Exercise';
 import Welcome from './components/Welcome';
+import Exercise from './components/Exercise';
 
 function App() {
   const [title, setTitle] = useState<string | undefined>(undefined),
     [exercise, setExercise] = useState<number | undefined>(undefined);
-  let component = undefined;
+  let main = undefined,
+    aside = undefined;
 
   if (title !== undefined && exercise !== undefined) {
-    component = <Exercise title={title} exercise={exercise} />;
+    main = <Exercise title={title} exercise={exercise} />;
   } else {
-    component = <Welcome />;
+    main = <Welcome />;
   }
 
   return (
     <Fragment>
       <Header />
       <Nav setTitle={setTitle} setExercise={setExercise} />
-      <Main>{component}</Main>
-      <Aside />
+      {main}
       <Footer />
     </Fragment>
   );

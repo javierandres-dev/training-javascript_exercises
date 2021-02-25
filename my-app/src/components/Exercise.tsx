@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Solution from './solutions/Solution';
+import Notification from './Notification';
 
 type Props = {
   title: string | undefined;
@@ -12,13 +13,20 @@ const Exercise: React.FC<Props> = ({ title, exercise }) => {
     component = <Solution exercise={exercise} />;
   }
   return (
-    <section>
-        <h2>
-          <span>{exercise}. </span>
-          {title}
-        </h2>
-      {component}
-    </section>
+    <Fragment>
+      <main role='main' className='container'>
+        <section className='card'>
+          <header className='card-header'>
+            <h2>
+              <span>{exercise}. </span>
+              {title}
+            </h2>
+          </header>
+          {component}
+        </section>
+      </main>
+      <Notification />
+    </Fragment>
   );
 };
 

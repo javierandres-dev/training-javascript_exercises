@@ -7,12 +7,13 @@ export default class Solution2 extends Component {
     return (
       <Fragment>
         <div className='card-body'>
-          <Button content='PRINT' clickHandler={() => window.print()} />
+          <Button
+            type='button'
+            content='PRINT'
+            handleClick={() => window.print()}
+          />
         </div>
-        <SolFooter
-          instructions='Press "PRINT" button'
-          status={'✔️ All ready'}
-        />
+        <SolFooter message='Press "PRINT" button' status={'✔️ All ready'} />
       </Fragment>
     );
   }

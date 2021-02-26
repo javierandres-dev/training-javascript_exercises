@@ -140,7 +140,7 @@ a:active {
 .card-footer h4 {
   font-weight: normal;
 }
-.card-button {
+.card-body button {
   background-color: var(--lightblue);
   color: var(--white);
   border: none;
@@ -153,22 +153,36 @@ a:active {
   text-decoration: none;
   transition: all 0.2s ease-in-out;
 }
-.card-button:hover {
+.card-body button:hover {
   background-color: var(--white);
   color: var(--lightblue);
   border: thin solid var(--lightblue);
   font-weight: bolder;
 }
-.card-button:focus {
+.card-body button:focus {
   outline: none;
 }
-/* 5. EXERCISE
-  ================================ */
-.exercise__solution form {
+.card-body form {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
 }
+.card-body form input {
+  display: block;
+  width: 100%;
+  margin: 1rem auto;
+  border: none;
+  border-bottom: thin solid var(--lightblue);
+}
+.card-body form input:focus {
+  outline: none;
+}
+.card-body form input[type='radio'] {
+  display: inline;
+  width: 8rem;
+}
+/* 5. EXERCISE
+  ================================ */
 .exercise__solution form fieldset {
   text-align: left;
   border: none;
@@ -177,20 +191,6 @@ a:active {
   margin-bottom: 1rem;
   font-style: italic;
   text-align: center;
-}
-.exercise__solution form input {
-  display: block;
-  width: 100%;
-  margin: 1rem auto;
-  border: none;
-  border-bottom: thin solid var(--lightblue);
-}
-.exercise__solution form input:focus {
-  outline: none;
-}
-.exercise__solution form input[type='radio'] {
-  display: inline;
-  width: 8rem;
 }
 .exercise__solution .btn-group {
   display: flex;
@@ -233,7 +233,7 @@ a:active {
   .container {
     max-width: 420px;
   }
-  .exercise__solution form input[type='radio'] {
+  .card-body form input[type='radio'] {
     width: 16rem;
   }
 }
@@ -241,7 +241,7 @@ a:active {
   .container {
     max-width: 720px;
   }
-  .exercise__solution form input[type='radio'] {
+  .card-body form input[type='radio'] {
     width: 8rem;
   }
   .footer {
@@ -257,7 +257,7 @@ a:active {
   .container {
     max-width: 1140px;
   }
-  .exercise__solution form input[type='radio'] {
+  .card-body form input[type='radio'] {
     width: 4rem;
   }
 }

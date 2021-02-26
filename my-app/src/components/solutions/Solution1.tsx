@@ -29,7 +29,7 @@ const Solution1: FC = () => {
         </p>
       </div>
       <SolFooter
-        instructions='This exercise does not require user interaction.'
+        message='This exercise does not require user interaction.'
         status={'✔️ Done!'}
       />
     </Fragment>

@@ -1,14 +1,14 @@
 import { FC } from 'react';
 
 type Props = {
-  instructions: string;
+  message: string;
   status: string;
 };
 
-const SolFooter: FC<Props> = ({ instructions, status }) => {
+const SolFooter: FC<Props> = ({ message, status }) => {
   return (
     <footer className='card-footer'>
-      <h3>{instructions}</h3>
+      <h3>{message}</h3>
       <h4 className='t-center'>{status}</h4>
     </footer>
   );

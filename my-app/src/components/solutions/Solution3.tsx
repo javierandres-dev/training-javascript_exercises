@@ -6,7 +6,7 @@ const Solution3: FC = () => {
     <Fragment>
       <div className='card-body'>{new Date().toLocaleDateString()}</div>
       <SolFooter
-        instructions='This exercise does not require user interaction'
+        message='This exercise does not require user interaction'
         status={'✔️ Done'}
       />
     </Fragment>

@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 type Props = {
-  title: string | undefined;
-  exercise: number | undefined;
+  title: string;
+  exercise: number;
 };
 
 const SolHeader: FC<Props> = ({ title, exercise }) => {

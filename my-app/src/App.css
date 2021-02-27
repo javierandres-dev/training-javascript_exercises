@@ -87,36 +87,47 @@ a:active {
 .header h1 {
   font-size: var(--f-size-xl);
 }
-/* 4. NAV
+/* 4. LINKS
   ================================ */
-.nav {
+.links {
   margin: 2rem auto;
-  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  align-content: center;
   flex-wrap: wrap;
   gap: 1rem;
 }
-.nav button {
-  width: 4rem;
-  height: 4rem;
+.link {
+  width: 3.2rem;
+  height: 3.2rem;
   background-color: var(--lightblue);
   border-radius: 50%;
-  border: none;
   color: var(--white);
-  cursor: pointer;
 }
-.nav button:hover {
+.link:hover {
   background-color: var(--blue);
+  text-decoration: none;
 }
-.nav button:focus {
-  outline: none;
+.link-back {
+  display: block;
+  width: 8rem;
+  margin: 2rem auto 1rem 1rem;
+  border-radius: 2rem;
+  background-color: var(--lightblue);
+  color: var(--white);
+  padding: 1rem;
+  text-align: center;
+}
+.link-back:hover {
+  background-color: var(--blue);
+  text-decoration: none;
 }
 /* 5. CARD
   ================================ */
 .card {
   width: min(92%, 48rem);
-  margin: 2rem auto;
+  margin: 1rem auto 2rem;
   border: thin solid var(--blue);
   border-radius: 1rem;
   padding: 1rem;

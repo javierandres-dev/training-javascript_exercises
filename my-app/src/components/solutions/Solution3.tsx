@@ -1,16 +1,14 @@
-import { FC, Fragment } from 'react';
-import SolFooter from './SolFooter';
+import { FC, Dispatch, SetStateAction } from 'react';
 
-const Solution3: FC = () => {
-  return (
-    <Fragment>
-      <div className='card-body'>{new Date().toLocaleDateString()}</div>
-      <SolFooter
-        message='This exercise does not require user interaction'
-        status={'✔️ Done'}
-      />
-    </Fragment>
-  );
+type Props = {
+  setMessage: Dispatch<SetStateAction<string>>;
+  setStatus: Dispatch<SetStateAction<string>>;
+};
+
+const Solution3: FC<Props> = ({ setMessage, setStatus }) => {
+  setMessage('This exercise does not require user interaction.');
+  setStatus('✔️ Done!');
+  return <div className='card-body'>{new Date().toLocaleDateString()}</div>;
 };
 
 export default Solution3;

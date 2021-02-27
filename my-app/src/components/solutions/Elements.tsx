@@ -16,7 +16,7 @@ export function Button(Props: ButtonProps) {
 
 interface FormProps {
   children: React.ReactNode;
-  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  handleSubmit: (e: React.SyntheticEvent) => void;
 }
 
 export function Form(Props: FormProps) {
@@ -28,18 +28,28 @@ export function Form(Props: FormProps) {
   );
 }
 
-interface InputProps {
-  type: 'text' | 'number';
-  placeholder: string;
-}
-
-export function Input(Props: InputProps) {
-  return <input type={Props.type} placeholder={Props.placeholder} />;
-}
-
 interface LabelProps {
+  htmlFor: string;
   content: string;
 }
 export function Label(Props: LabelProps) {
-  return <label>{Props.content}</label>;
+  return <label htmlFor={Props.htmlFor}>{Props.content}</label>;
+}
+
+interface InputProps {
+  id: string;
+  type: 'text';
+  name: string;
+  value: string;
+}
+
+export function Input(Props: InputProps) {
+  return (
+    <input
+      id={Props.id}
+      type={Props.type}
+      name={Props.name}
+      value={Props.value}
+    />
+  );
 }

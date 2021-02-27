@@ -1,13 +1,8 @@
-import { FC, Dispatch, SetStateAction } from 'react';
+import { FC, Fragment } from 'react';
 import { getWeekDays } from '../../helpers/auxiliar';
+import SolFooter from './SolFooter';
 
-type Props = {
-  setMessage: Dispatch<SetStateAction<string>>;
-  setStatus: Dispatch<SetStateAction<string>>;
-};
-
-const Solution1: FC<Props> = ({ setMessage, setStatus }) => {
-  setMessage('This exercise does not require user interaction.');
+const Solution1: FC = () => {
   const weekDays = getWeekDays(),
     date = new Date(),
     day = date.getDay(),
@@ -23,16 +18,20 @@ const Solution1: FC<Props> = ({ setMessage, setStatus }) => {
     hours = getHours - 12;
     period = 'PM';
   }
-  setStatus('✔️ Done!');
+  const message: string = 'This exercise does not require user interaction.';
+  const status: string = '✔️ Done!';
   return (
-    <div className='card-body'>
-      <p>Today is: {weekDays[day]}</p>
-      <p>
-        {hours < 10 ? '0' + hours : hours} {period} :
-        {minutes < 10 ? '0' + minutes : minutes} :
-        {seconds < 10 ? '0' + seconds : seconds}
-      </p>
-    </div>
+    <Fragment>
+      <div className='card-body'>
+        <p>Today is: {weekDays[day]}</p>
+        <p>
+          {hours < 10 ? '0' + hours : hours} {period} :
+          {minutes < 10 ? '0' + minutes : minutes} :
+          {seconds < 10 ? '0' + seconds : seconds}
+        </p>
+      </div>
+      <SolFooter message={message} status={status} />
+    </Fragment>
   );
 };
 

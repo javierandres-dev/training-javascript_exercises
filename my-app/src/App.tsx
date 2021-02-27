@@ -8,9 +8,7 @@ import Exercise from './components/Exercise';
 
 function App() {
   const [title, setTitle] = useState<string>(''),
-    [exercise, setExercise] = useState<number>(0),
-    [message, setMessage] = useState<string>(''),
-    [status, setStatus] = useState<string>('');
+    [exercise, setExercise] = useState<number>(0);
   return (
     <Router>
       <Header />
@@ -25,16 +23,7 @@ function App() {
         <Route
           exact
           path='/exercise'
-          component={() => (
-            <Exercise
-              title={title}
-              exercise={exercise}
-              message={message}
-              setMessage={setMessage}
-              status={status}
-              setStatus={setStatus}
-            />
-          )}
+          component={() => <Exercise title={title} exercise={exercise} />}
         />
       </Switch>
       <Footer />

@@ -1,5 +1,5 @@
 import React, { FC, useState, Fragment } from 'react';
-import { Form } from './Elements';
+import { Form, Label, Input } from './Elements';
 import SolFooter from './SolFooter';
 
 const Solution4: FC = () => {
@@ -11,7 +11,7 @@ const Solution4: FC = () => {
   const [num2, setNum2] = useState<number | undefined>(undefined);
   const [num3, setNum3] = useState<number | undefined>(undefined);
 
-  const processForm = (e: React.SyntheticEvent): void => {
+  const handleSubmit = (e: React.SyntheticEvent): void => {
     e.preventDefault();
     if (num1 === undefined || num2 === undefined || num3 === undefined) {
       setMessage('All fields are required');
@@ -33,33 +33,47 @@ const Solution4: FC = () => {
       }
     }
   };
+  const handleChange = (e: any) => {
+    if (e.nativeEvent.target.id === 'num1') {
+      setNum1(parseInt(e.nativeEvent.target.value));
+    }
+    if (e.nativeEvent.target.id === 'num2') {
+      setNum2(parseInt(e.nativeEvent.target.value));
+    }
+    if (e.nativeEvent.target.id === 'num3') {
+      setNum3(parseInt(e.nativeEvent.target.value));
+    }
+  };
   return (
     <Fragment>
       <div className='card-body'>
-        <Form handleSubmit={processForm}>
-          <label htmlFor='num1'>Enter first side length</label>
-          <input
+        <Form onSubmit={handleSubmit}>
+          <Label htmlFor='num1' content='Enter first side length' />
+          <Input
             id='num1'
             type='number'
+            name='num1'
             value={num1}
             placeholder='e.g. 2'
-            onChange={(e) => setNum1(parseInt(e.currentTarget.value))}
+            onChange={(e) => handleChange(e)}
           />
-          <label htmlFor='num2'>Enter second side length</label>
-          <input
+          <Label htmlFor='num2' content='Enter second side length' />
+          <Input
             id='num2'
             type='number'
+            name='num2'
             value={num2}
             placeholder='e.g. 3'
-            onChange={(e) => setNum2(parseInt(e.currentTarget.value))}
+            onChange={(e) => handleChange(e)}
           />
-          <label htmlFor='num3'>Enter third side length</label>
-          <input
+          <Label htmlFor='num3' content='Enter third side length' />
+          <Input
             id='num3'
             type='number'
+            name='num3'
             value={num3}
             placeholder='e.g. 4'
-            onChange={(e) => setNum3(parseInt(e.currentTarget.value))}
+            onChange={(e) => handleChange(e)}
           />
         </Form>
       </div>

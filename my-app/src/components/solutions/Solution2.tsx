@@ -1,17 +1,20 @@
-import { FC, Fragment } from 'react';
+import { FC, useState, Fragment } from 'react';
 import { Button } from './Elements';
 import SolFooter from './SolFooter';
 
 const Solution2: FC = () => {
-  const message: string = 'Press "PRINT" button.';
-  const status: string = '✔️ Done';
+  const [status, setStatus] = useState<string>('☝️ Waiting for you'),
+    message: string = 'Press "PRINT" button.';
   return (
     <Fragment>
       <div className='card-body'>
         <Button
           type='button'
           content='PRINT'
-          handleClick={() => window.print()}
+          onClick={() => {
+            window.print();
+            setStatus('✔️ Done');
+          }}
         />
       </div>
       <SolFooter message={message} status={status} />

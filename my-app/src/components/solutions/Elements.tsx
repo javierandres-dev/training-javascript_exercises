@@ -3,12 +3,12 @@ import * as React from 'react';
 interface ButtonProps {
   type: 'button' | 'reset';
   content: string;
-  handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function Button(Props: ButtonProps) {
   return (
-    <button type={Props.type} onClick={Props.handleClick}>
+    <button type={Props.type} onClick={Props.onClick}>
       {Props.content}
     </button>
   );
@@ -16,12 +16,12 @@ export function Button(Props: ButtonProps) {
 
 interface FormProps {
   children: React.ReactNode;
-  handleSubmit: (e: React.SyntheticEvent) => void;
+  onSubmit: (e: React.SyntheticEvent) => void;
 }
 
 export function Form(Props: FormProps) {
   return (
-    <form onSubmit={Props.handleSubmit}>
+    <form onSubmit={Props.onSubmit}>
       {Props.children}
       <button type='submit'>RESULT</button>
     </form>
@@ -38,9 +38,11 @@ export function Label(Props: LabelProps) {
 
 interface InputProps {
   id: string;
-  type: 'text';
+  type: 'number' | 'string';
   name: string;
-  value: string;
+  placeholder: string;
+  value: number | string | undefined;
+  onChange: (e: React.SyntheticEvent) => void;
 }
 
 export function Input(Props: InputProps) {
@@ -50,6 +52,9 @@ export function Input(Props: InputProps) {
       type={Props.type}
       name={Props.name}
       value={Props.value}
+      placeholder={Props.placeholder}
+      onChange={Props.onChange}
+      required
     />
   );
 }

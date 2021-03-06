@@ -1,16 +1,23 @@
 import { FC, Fragment } from 'react';
-import { getWeekDays } from '../../helpers/auxiliar';
 import SolFooter from './SolFooter';
 
 const Solution1: FC = () => {
-  const weekDays = getWeekDays(),
-    date = new Date(),
-    day = date.getDay(),
-    getHours = date.getHours(),
-    minutes = date.getMinutes(),
-    seconds = date.getSeconds();
-  let hours = undefined;
-  let period = undefined;
+  const weekDays: string[] = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ],
+    date: Date = new Date(),
+    day: number = date.getDay(),
+    getHours: number = date.getHours(),
+    minutes: number = date.getMinutes(),
+    seconds: number = date.getSeconds();
+  let hours: number | undefined = undefined;
+  let period: string | undefined = undefined;
   if (getHours >= 0 && getHours <= 12) {
     hours = getHours;
     period = 'AM';

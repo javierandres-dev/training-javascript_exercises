@@ -278,14 +278,6 @@ a:active {
   font-family: sans-serif;
   font-size: 16px;
   font-weight: lighter;
-  color: gray;
-  padding: 8px 16px;
-}
-.dev .top {
-  text-align: left;
-}
-.dev .bottom {
-  text-align: right;
 }
 .dev a {
   color: #05a6f1;
@@ -304,6 +296,26 @@ a:active {
   text-decoration: underline;
   color: gray;
 }
+.dev .top a,
+.dev .bottom a {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+.dev .top a {
+  justify-content: flex-start;
+}
+.dev .bottom a {
+  justify-content: flex-end;
+}
+.dev span {
+  color: gray;
+}
+.dev img {
+  width: 32px;
+  margin: 0 8px;
+}
+
 /*
 printAlert("success", "✔️ Done!");
 printAlert("warning", "⚠️ ");

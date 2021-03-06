@@ -1,4 +1,4 @@
-import React, { FC, useState, Fragment } from 'react';
+import React, { FC, useState, useEffect, Fragment } from 'react';
 import { Form, Label, Input } from './Elements';
 import SolFooter from './SolFooter';
 
@@ -10,7 +10,11 @@ const Solution4: FC = () => {
   const [num1, setNum1] = useState<number | undefined>(undefined);
   const [num2, setNum2] = useState<number | undefined>(undefined);
   const [num3, setNum3] = useState<number | undefined>(undefined);
-
+  /*
+useEffect(() => {
+        console.log(message, status);
+}
+*/
   const handleSubmit = (e: React.SyntheticEvent): void => {
     e.preventDefault();
     if (num1 === undefined || num2 === undefined || num3 === undefined) {
@@ -33,6 +37,7 @@ const Solution4: FC = () => {
       }
     }
   };
+
   const handleChange = (e: any) => {
     if (e.nativeEvent.target.id === 'num1') {
       setNum1(parseInt(e.nativeEvent.target.value));
@@ -44,6 +49,7 @@ const Solution4: FC = () => {
       setNum3(parseInt(e.nativeEvent.target.value));
     }
   };
+
   return (
     <Fragment>
       <div className='card-body'>

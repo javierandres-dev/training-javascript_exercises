@@ -34,7 +34,7 @@ const Solution4: FC = () => {
     }
   };
 
-  const handleChange = (e: any) => {
+  const handleInputChange = (e: any) => {
     if (e.nativeEvent.target.id === 'num1') {
       setNum1(parseInt(e.nativeEvent.target.value));
     } else if (e.nativeEvent.target.id === 'num2') {
@@ -53,27 +53,24 @@ const Solution4: FC = () => {
             id='num1'
             type='number'
             name='num1'
-            value={num1}
             placeholder='e.g. 2'
-            onChange={(e) => handleChange(e)}
+            onChange={(e) => handleInputChange(e)}
           />
           <Label htmlFor='num2' content='Enter second side length' />
           <Input
             id='num2'
             type='number'
             name='num2'
-            value={num2}
             placeholder='e.g. 3'
-            onChange={(e) => handleChange(e)}
+            onChange={(e) => handleInputChange(e)}
           />
           <Label htmlFor='num3' content='Enter third side length' />
           <Input
             id='num3'
             type='number'
             name='num3'
-            value={num3}
             placeholder='e.g. 4'
-            onChange={(e) => handleChange(e)}
+            onChange={(e) => handleInputChange(e)}
           />
         </Form>
       </div>

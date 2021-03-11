@@ -41,7 +41,6 @@ interface InputProps {
   type: 'number' | 'string';
   name: string;
   placeholder: string;
-  value: number | string | undefined;
   onChange: (e: React.SyntheticEvent) => void;
 }
 
@@ -51,7 +50,6 @@ export function Input(Props: InputProps) {
       id={Props.id}
       type={Props.type}
       name={Props.name}
-      value={Props.value}
       placeholder={Props.placeholder}
       onChange={Props.onChange}
       required

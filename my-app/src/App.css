@@ -240,9 +240,9 @@ a:active {
 }
 /* 8. MEDIA QUERIES
   ================================ */
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 576px) {
   .container {
-    max-width: 420px;
+    max-width: 540px;
   }
   .card-body form input[type='radio'] {
     width: 16rem;
@@ -259,7 +259,7 @@ a:active {
     text-align: center;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .container {
     max-width: 960px;
   }
@@ -270,6 +270,11 @@ a:active {
   }
   .card-body form input[type='radio'] {
     width: 4rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
   }
 }
 /* 9. DEVELOPER

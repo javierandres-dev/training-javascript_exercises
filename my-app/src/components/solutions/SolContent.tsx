@@ -1,4 +1,5 @@
 import { FC, Fragment } from 'react';
+import { Redirect } from 'react-router-dom';
 import Solution1 from './Solution1';
 import Solution2 from './Solution2';
 import Solution3 from './Solution3';
@@ -10,7 +11,9 @@ type Props = {
 
 const SolContent: FC<Props> = ({ exercise }) => {
   let content = undefined;
-  if (exercise === 1) {
+  if (exercise === 0) {
+    return <Redirect to='/' />;
+  } else if (exercise === 1) {
     content = <Solution1 />;
   } else if (exercise === 2) {
     content = <Solution2 />;
@@ -18,8 +21,6 @@ const SolContent: FC<Props> = ({ exercise }) => {
     content = <Solution3 />;
   } else if (exercise === 4) {
     content = <Solution4 />;
-  } else {
-    content = null;
   }
 
   return <Fragment>{content}</Fragment>;

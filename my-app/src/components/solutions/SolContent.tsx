@@ -4,6 +4,7 @@ import Solution1 from './Solution1';
 import Solution2 from './Solution2';
 import Solution3 from './Solution3';
 import Solution4 from './Solution4';
+import Solution5 from './Solution5';
 
 type Props = {
   exercise: number;
@@ -21,6 +22,8 @@ const SolContent: FC<Props> = ({ exercise }) => {
     content = <Solution3 />;
   } else if (exercise === 4) {
     content = <Solution4 />;
+  } else if (exercise === 5) {
+    content = <Solution5 />;
   }
 
   return <Fragment>{content}</Fragment>;

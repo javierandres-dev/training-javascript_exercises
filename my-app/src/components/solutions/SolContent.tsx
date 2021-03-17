@@ -6,6 +6,9 @@ import Solution3 from './Solution3';
 import Solution4 from './Solution4';
 import Solution5 from './Solution5';
 import Solution6 from './Solution6';
+import Solution7 from './Solution7';
+import Solution8 from './Solution8';
+import Soon from './Soon';
 
 type Props = {
   exercise: number;
@@ -27,8 +30,12 @@ const SolContent: FC<Props> = ({ exercise }) => {
     content = <Solution5 />;
   } else if (exercise === 6) {
     content = <Solution6 />;
+  } else if (exercise === 7) {
+    content = <Solution7 />;
+  } else if (exercise === 8) {
+    content = <Solution8 />;
   } else {
-    content = <p>Oops!</p>;
+    content = <Soon />;
   }
 
   return <Fragment>{content}</Fragment>;

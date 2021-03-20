@@ -1,14 +1,13 @@
-# GitHub Pages
-:open_file_folder: github_pages-javascript_exercises
+# Self―Training
+:octocat: training-javascript_exercises
 
 ## Description
 Website is inspired and based on the exercises proposed in [w3resource](https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php).  
-How does it look? Take a look at [JavaScript Exercises](https://javierandresgp.github.io/github_pages-javascript_exercises/)
+How does it look? Take a look at [JavaScript Exercises](https://javierandresgp.github.io/training-javascript_exercises/)
 
 ## Stack
 * React
 * TypeScript
-* Material-UI
 
 ## Directories
 :open_file_folder: 0x00 First version - (HTML - CSS - JS)  

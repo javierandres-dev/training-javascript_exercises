@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Label, Input } from './Elements';
 import SolFooter from './SolFooter';
 
 const Solution6 = () => {
   const [randomNum, setRandomNum] = useState<number | undefined>(undefined);
-  console.log(randomNum);
   const [message, setMessage] = useState<string>(
     'Enter a number between 1 to 10 and press "RESULT" button.'
   );
   const [status, setStatus] = useState<string>('☝️ Waiting for you');
   const [num, setNum] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    setRandomNum(Math.floor(Math.random() * 10 + 1));
+  }, []);
 
   const handleChange = (e: any): void => {
     setNum(parseInt(e.nativeEvent.target.value));
@@ -34,7 +37,6 @@ const Solution6 = () => {
         setStatus('⚠️ Try again');
       }
     }
-    setRandomNum(Math.floor(Math.random() * 10 + 1));
   };
   return (
     <>

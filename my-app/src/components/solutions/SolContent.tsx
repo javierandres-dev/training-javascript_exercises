@@ -8,6 +8,8 @@ import Solution5 from './Solution5';
 import Solution6 from './Solution6';
 import Solution7 from './Solution7';
 import Solution8 from './Solution8';
+import Solution9 from './Solution9';
+import Solution10 from './Solution10';
 import Soon from './Soon';
 
 type Props = {
@@ -34,6 +36,10 @@ const SolContent: FC<Props> = ({ exercise }) => {
     content = <Solution7 />;
   } else if (exercise === 8) {
     content = <Solution8 />;
+  } else if (exercise === 9) {
+    content = <Solution9 />;
+  } else if (exercise === 10) {
+    content = <Solution10 />;
   } else {
     content = <Soon />;
   }

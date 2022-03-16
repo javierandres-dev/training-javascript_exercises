@@ -2,11 +2,8 @@
   // your script goes here
 </script>
 
-<svelte:head>
-  <title>Home</title>
-</svelte:head>
-
-<p>from index</p>
+<!-- markup (zero or more items) goes here -->
+<p>404 Error</p>
 
 <style>
   /* your styles go here */

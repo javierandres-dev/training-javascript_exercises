@@ -3,10 +3,9 @@
 </script>
 
 <svelte:head>
-  <title>Home</title>
+  <title>Basic exercises</title>
 </svelte:head>
-
-<p>from index</p>
+<p>from basic</p>
 
 <style>
   /* your styles go here */

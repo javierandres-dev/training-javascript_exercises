@@ -3,7 +3,7 @@
 </script>
 
 <!-- markup (zero or more items) goes here -->
-<p>from header</p>
+<footer>from footer</footer>
 
 <style>
   /* your styles go here */

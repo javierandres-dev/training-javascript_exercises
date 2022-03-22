@@ -2,11 +2,8 @@
   // your script goes here
 </script>
 
-<svelte:head>
-  <title>Basic exercises</title>
-</svelte:head>
-
-<p>from basic</p>
+<!-- markup (zero or more items) goes here -->
+<header>from header</header>
 
 <style>
   /* your styles go here */
